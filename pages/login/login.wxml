@@ -1,0 +1,77 @@
+<!-- pages/login/login.wxml -->
+<!-- <text>pages/login/login.wxml</text> -->
+<view class="content">
+    <!-- 手机登陆 账号登陆 -->
+    <view>
+        <view class="type-navbar">
+            <view class="type-box" wx:for="{{categories}}" wx:key="index">
+                <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+                    {{item.name}}
+                </view>
+            </view>
+        </view>
+        <view class="bg_content">
+            <view class="mater_content">
+                <!-- bar  1 -->
+                <view class="mater_text" hidden="{{activeCategoryId==0?false:true}}">
+                    <form bindsubmit="submitForm">
+                        <view class="container">
+                            <!-- 手机号 -->
+                            <view class="label-input ">
+                                <text class="label">+86</text>
+                                <input class="input" placeholder="请输入手机号" type="number" name="username" bindinput="setMobile" />
+                            </view>
+                            <!-- 验证码 -->
+                            <view class="verify-box">
+                                <input class="verify-input" placeholder="验证码" name="code" type="text" />
+                                <view wx:if="{{snsMsgWait == 60}}" class="verify-btn" bindtap="getCode" disabled="{{smsFlag}}">
+                                    {{sendTime}}
+                                </view>
+                                <view wx:if="{{snsMsgWait < 60}}" class="verify-btn1" disabled="{{smsFlag}}">
+                                    {{sendTime}}
+                                </view>
+                            </view>
+                        </view>
+                    </form>
+                </view>
+                <!-- bar  2 -->
+                <view class="mater_text" hidden="{{activeCategoryId==1?false:true}}">
+                    <form bindsubmit="submitForm">
+                        <view class="container login-wrap">
+                            <!-- 手机号 -->
+                            <view class="label-input ">
+                                <text class="label">+86</text>
+                                <input class="input" placeholder="请输入手机号" type="text" name="realname" bindinput="setMobile" />
+                            </view>
+                            <!-- 密码 -->
+                            <view class="simple">
+                                <text class="label">密码</text>
+                                <input class="input" placeholder="请输入6-16位密码" name="password" password type="text" />
+                            </view>
+                        </view>
+                    </form>
+                </view>
+            </view>
+            <!-- 生产方式 -->
+            <view class="sware">
+                <view>登陆方式:</view>
+                <view class="weui_cell">
+                    <radio-group class="" bindchange="radioChange">
+                        <radio checked="true" />
+                        工厂/供应商
+                        <radio checked="" />
+                        直播电商/市场渠道
+                    </radio-group>
+                </view>
+            </view>
+            <!-- 注册并登陆 -->
+            <button style="width:644rpx" class="login-btn" formType="submit" bindsubmit="submitForm">
+                登陆
+            </button>
+            <!-- 协议 -->
+            <view class="hetong" bindtap="goRegister">
+                <text style="color:#3880FF">注册</text>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,377 @@
+<!-- index.wxml -->
+<view class="content">
+	<!-- swiper 轮播图 -->
+	<block>
+		<swiper class="swiper_box" indicator-dots="true" vertical="" circular="ture" indicator-active-color="#FFFFFF" autoplay="true" interval="3000" duration="1000">
+			<block wx:for="{{imgUrls}}" wx:key="index" wx:for-item="img">
+				<swiper-item wx:key="*this">
+					<block>
+						<navigator url="/pages/index/index" open-type="redirect">
+							<image src="{{img}}" class="slide-image" />
+						</navigator>
+					</block>
+				</swiper-item>
+			</block>
+		</swiper>
+	</block>
+	<!-- 图标  下单管理  生产跟进  发货管理  old -->
+	<!-- <view class="fenlei">
+		<navigator wx:if="{{loginType == '自主下单'}}" url="/pages/order_management/index" open-type="navigate">
+			<image src="../../images/xdgl.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">下单管理</text>
+			</view>
+		</navigator>
+		<navigator wx:if="{{loginType == '集团工厂'}}" url="/pages/order_receive_management/order_receive_management" open-type="navigate">
+			<image src="../../images/jdgl.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">接单管理</text>
+			</view>
+		</navigator>
+		<navigator url="/pages/Production_follow/Production_follow" open-type="navigate">
+			<image src="../../images/shchgj.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">生产跟进</text>
+			</view>
+		</navigator>
+		<navigator wx:if="{{loginType == '自主下单'}}" url="/pages/shipping_management/shipping_management" open-type="navigate">
+			<image src="../../images/fhgl.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">发货管理</text>
+			</view>
+		</navigator>
+		<navigator wx:if="{{loginType == '集团工厂'}}" url="/pages/group_ship_management/group_ship_management" open-type="navigate">
+			<image src="../../images/fhgl.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">发货管理</text>
+			</view>
+		</navigator>
+	</view> -->
+	<!-- 新款 接单  排期  发货 new -->
+	<view class="fenlei" wx:if="{{loginType == '自主下单'}}">
+		<navigator  url="/pages/order_management/index" open-type="navigate">
+			<image src="../../images/xinkuan.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">新款</text>
+			</view>
+		</navigator>
+		<navigator  url="/pages/order_receive_management/order_receive_management" open-type="navigate">
+			<image src="../../images/jiedan.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">接单</text>
+			</view>
+		</navigator>
+		<navigator url="/pages/Production_follow/Production_follow" open-type="navigate">
+			<image src="../../images/paiqi.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">排期</text>
+			</view>
+		</navigator>
+		<navigator  url="/pages/shipping_management/shipping_management" open-type="navigate">
+			<image src="../../images/fahuo.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">发货</text>
+			</view>
+		</navigator>
+	</view>
+	<!-- 选款 下单  进度  收货 new -->
+	<view class="fenlei" wx:if="{{loginType == '集团工厂'}}">
+		<navigator  url="/pages/choose_design/index" open-type="navigate">
+			<image src="../../images/xinkuan.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">选款</text>
+			</view>
+		</navigator>
+		<navigator  url="/pages/order_place/index" open-type="navigate">
+			<image src="../../images/jiedan.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">下单</text>
+			</view>
+		</navigator>
+		<navigator url="/pages/Production_follow/Production_follow" open-type="navigate">
+			<image src="../../images/paiqi.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">进度</text>
+			</view>
+		</navigator>
+		<navigator  url="/pages/confirm_receipt/index" open-type="navigate">
+			<image src="../../images/fahuo.png" class="fenlei_image" />
+			<view class="fenlei_wenzi">
+				<text class="">收货</text>
+			</view>
+		</navigator>
+	</view>
+	<!-- 订单排行  生产监控  自主下单 -->
+	<!-- <view wx:if="{{loginType == '自主下单'}}" style="border: 1px solid #ccc;margin-top: 2vh;border-radius: .5em;">
+		<view class="type-navbar">
+			<view class="type-box" wx:for="{{categories}}" wx:key="index">
+				<view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+					{{item.name}}
+				</view>
+			</view>
+		</view>
+		<view class="bg_content">
+			<view class="mater_content">
+				
+				<view class="mater_text" hidden="{{activeCategoryId==0?false:true}}">
+					<view class="mater_per" >
+						<view class="pie_con">
+							<text class="mater_tishi">订单准时率</text>
+							<text class="mater_tishi2">订单准时率占比分析</text>
+							<text class="mater_tishi3">单位: 件</text>
+						</view>
+						<view class="container">
+							<ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ pie1 }}"></ec-canvas>
+						</view>
+					</view>
+					<view class="clumn_con">
+						<text class="mater_tishi1">翻单次数排行</text>
+						<view class="container">
+  							<ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ bar }}"></ec-canvas>
+						</view>
+					</view>
+				</view>
+				<view class="mater_text" hidden="{{activeCategoryId==1?false:true}}">
+					<view class="mater_text_content">
+						<view style="margin-left:3vw;margin-top: 1vh;">效能分析</view>
+						<view class="mater_xnfx">
+							<view class="mater_xnfx_content">
+								<image src="../../images/xnfx1.png" class="fenlei_image1" />
+								<view class="mater_xnfx_wenzi">
+									<text class="">今日计划发货\n</text>
+									<text class="">30单/8000件</text>
+								</view>
+							</view>
+							<view class="mater_xnfx_content">
+								<image src="../../images/xnfx2.png" class="fenlei_image1" />
+								<view class="mater_xnfx_wenzi">
+									<text class="">已超期订单\n</text>
+									<text class="">50单/15000件</text>
+								</view>
+							</view>
+							<view class="mater_xnfx_content">
+								<image src="../../images/xnfx3.png" class="fenlei_image1" />
+								<view class="mater_xnfx_wenzi">
+									<text class="">未完成订单\n</text>
+									<text class="">50单/15000件</text>
+								</view>
+							</view>
+							<view class="mater_xnfx_content">
+								<image src="../../images/xnfx4.png" class="fenlei_image1" />
+								<view class="mater_xnfx_wenzi">
+									<text class="">总产能/可用产能\n</text>
+									<text class="">2000时/5000时</text>
+								</view>
+							</view>
+							<view class="mater_xnfx_content">
+								<image src="../../images/xnfx5.png" class="fenlei_image1" />
+								<view class="mater_xnfx_wenzi">
+									<text class="">本月时效\n</text>
+									<text class="">91.53%同比：1.53%</text>
+								</view>
+							</view>
+							<view class="mater_xnfx_content">
+								<image src="../../images/xnfx6.png" class="fenlei_image1" />
+								<view class="mater_xnfx_wenzi">
+									<text class="">本月退件率\n</text>
+									<text class="">5.53%同比：1%</text>
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class="chqyj">
+						<view class="chqyj_title">超期预警</view>
+						<view class="chqyj_content">
+							<view class="yuanquantu">
+								<text class="yqt_title">裁床开裁</text>
+								<canvas canvas-id="ringCanvas1" disable-scroll="true" class="pieCanvas2"></canvas>
+								<text class="yqt_num1">20</text>
+								<text class="yqt_num">单/300件</text>
+							</view>
+							<view class="yuanquantu">
+								<text class="yqt_title">车缝上线</text>
+								<canvas canvas-id="ringCanvas2" disable-scroll="true" class="pieCanvas2"></canvas>
+								<text class="yqt_num1">32</text>
+								<text class="yqt_num">单/450件</text>
+							</view>
+							<view class="yuanquantu">
+								<text class="yqt_title">进尾部</text>
+								<canvas canvas-id="ringCanvas3" disable-scroll="true" class="pieCanvas2"></canvas>
+								<text class="yqt_num1">9</text>
+								<text class="yqt_num">单/110件</text>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view> -->
+	<!-- 集团工厂 -->
+	<!-- <view wx:if="{{loginType == '集团工厂'}}" class="mater_text1">
+		<view class="mater_text_content">
+			<view style="margin-left:3vw;margin-top: 1vh;">效能分析</view>
+			<view class="mater_xnfx">
+				<view class="mater_xnfx_content">
+					<image src="../../images/xnfx1.png" class="fenlei_image1" />
+					<view class="mater_xnfx_wenzi">
+						<text class="">今日计划发货\n</text>
+						<text class="">30单/8000件</text>
+					</view>
+				</view>
+				<view class="mater_xnfx_content">
+					<image src="../../images/xnfx2.png" class="fenlei_image1" />
+					<view class="mater_xnfx_wenzi">
+						<text class="">已超期订单\n</text>
+						<text class="">50单/15000件</text>
+					</view>
+				</view>
+				<view class="mater_xnfx_content">
+					<image src="../../images/xnfx3.png" class="fenlei_image1" />
+					<view class="mater_xnfx_wenzi">
+						<text class="">未完成订单\n</text>
+						<text class="">50单/15000件</text>
+					</view>
+				</view>
+				<view class="mater_xnfx_content">
+					<image src="../../images/xnfx4.png" class="fenlei_image1" />
+					<view class="mater_xnfx_wenzi">
+						<text class="">总产能/可用产能\n</text>
+						<text class="">2000时/5000时</text>
+					</view>
+				</view>
+				<view class="mater_xnfx_content">
+					<image src="../../images/xnfx5.png" class="fenlei_image1" />
+					<view class="mater_xnfx_wenzi">
+						<text class="">本月时效\n</text>
+						<text class="">91.53%同比：1.53%</text>
+					</view>
+				</view>
+				<view class="mater_xnfx_content">
+					<image src="../../images/xnfx6.png" class="fenlei_image1" />
+					<view class="mater_xnfx_wenzi">
+						<text class="">本月退件率\n</text>
+						<text class="">5.53%同比：1%</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="chqyj">
+			<view class="chqyj_title">超期预警</view>
+			<view class="chqyj_content">
+				<view class="yuanquantu">
+					<text class="yqt_title">裁床开裁</text>
+					<canvas canvas-id="ringCanvas1" disable-scroll="true" class="pieCanvas2"></canvas>
+					<text class="yqt_num1">20</text>
+					<text class="yqt_num">单/300件</text>
+				</view>
+				<view class="yuanquantu">
+					<text class="yqt_title">车缝上线</text>
+					<canvas canvas-id="ringCanvas2" disable-scroll="true" class="pieCanvas2"></canvas>
+					<text class="yqt_num1">32</text>
+					<text class="yqt_num">单/450件</text>
+				</view>
+				<view class="yuanquantu">
+					<text class="yqt_title">进尾部</text>
+					<canvas canvas-id="ringCanvas3" disable-scroll="true" class="pieCanvas2"></canvas>
+					<text class="yqt_num1">9</text>
+					<text class="yqt_num">单/110件</text>
+				</view>
+			</view>
+		</view>
+	</view> -->
+	<view  class="mater_text1">
+		<!-- 时效分析 -->
+		<view class="mater_text_content">
+			<view style="margin-left:3vw;margin-top: 1vh;">时效分析</view>
+			<view class="mater_xnfx">
+				<view class="mater_xnfx_content">
+					<image src="../../images/xnfx1.png" class="fenlei_image1" />
+					<view class="mater_xnfx_wenzi">
+						<text class="">今日计划发货\n</text>
+						<text class="">30单/8000件</text>
+					</view>
+				</view>
+				<view class="mater_xnfx_content">
+					<image src="../../images/xnfx2.png" class="fenlei_image1" />
+					<view class="mater_xnfx_wenzi">
+						<text class="">已超期订单\n</text>
+						<text class="">50单/15000件</text>
+					</view>
+				</view>
+				<view class="mater_xnfx_content">
+					<image src="../../images/xnfx3.png" class="fenlei_image1" />
+					<view class="mater_xnfx_wenzi">
+						<text class="">未完成订单\n</text>
+						<text class="">50单/15000件</text>
+					</view>
+				</view>
+				<view class="mater_xnfx_content">
+					<image src="../../images/xnfx4.png" class="fenlei_image1" />
+					<view class="mater_xnfx_wenzi">
+						<text class="">总产能/可用产能\n</text>
+						<text class="">2000时/5000时</text>
+					</view>
+				</view>
+				<view class="mater_xnfx_content">
+					<image src="../../images/xnfx5.png" class="fenlei_image1" />
+					<view class="mater_xnfx_wenzi">
+						<text class="">本月时效\n</text>
+						<text class="">91.53%同比：1.53%</text>
+					</view>
+				</view>
+				<view class="mater_xnfx_content">
+					<image src="../../images/xnfx6.png" class="fenlei_image1" />
+					<view class="mater_xnfx_wenzi">
+						<text class="">本月退件率\n</text>
+						<text class="">5.53%同比：1%</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 热播品类TOP3 -->
+		<view class="chqyj">
+			<view class="chqyj_title">热播品类TOP3</view>
+			<view class="chqyj_content">
+				<view class="yuanquantu">
+					<view >
+						<image src="../../images/TOP_1.png" class="fenlei_image1" />
+					</view>
+					<view>
+						<view>
+							<text class="yqt_num1">连衣裙</text>
+						</view>
+						<view>
+							<text class="yqt_num">20款</text>
+						</view>
+					</view>
+				</view>
+				<view class="yuanquantu">
+					<view >
+						<image src="../../images/TOP_2.png" class="fenlei_image1" />
+					</view>
+					<view>
+						<view>
+							<text class="yqt_num1">T恤</text>
+						</view>
+						<view>
+							<text class="yqt_num">18款</text>
+						</view>
+					</view>
+				</view>
+				<view class="yuanquantu">
+					<view >
+						<image src="../../images/TOP_3.png" class="fenlei_image1" />
+					</view>
+					<view>
+						<view>
+							<text class="yqt_num1">背心</text>
+						</view>
+						<view>
+							<text class="yqt_num">15款</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

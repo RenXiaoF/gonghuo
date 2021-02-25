@@ -1,0 +1,266 @@
+/* pages/order_management_add/index.wxss */
+.content {
+  width: 100%;
+  margin-top: 1%;
+}
+/* 保存 */
+.content_save {
+  color: #0486f4;
+  /* float: right; */
+  margin-left: 85%;
+}
+/* 生产制单基本信息 */
+.content_1 {
+  width: 100%;
+}
+.content_1_title {
+  color: white;
+  background-color: #9999a2;
+  border-radius: 0.5em;
+  padding-left: 4vw;
+  font-size: 35rpx;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+}
+/* 基本信息 */
+.content_base_1 {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2vh;
+}
+.text {
+  font-size: 28rpx;
+  width: 500rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx #d7d7d7 solid;
+}
+.label {
+  box-sizing: border-box;
+  float: left;
+  padding-left: 1vw;
+}
+.input4 {
+  /* margin-left: 7vw;
+    margin-top: -3.5vh; */
+  box-sizing: border-box;
+  /* float: right; */
+  height: 90rpx;
+  /* width: 370rpx; */
+  padding-left: 1vw;
+}
+.push_avada1 {
+  width: 200rpx;
+  height: 250rpx;
+  /* margin-top: 0.5vh; */
+  margin-right: -2vh;
+  margin-left: 19vw;
+
+  /* 圆角 */
+  /* -webkit-border-radius: 5em;
+     -moz-border-radius: 5em;
+     border-radius: 5em; */
+}
+.push_avada {
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: -6vh;
+  /* margin-right: 2vh; */
+  position: absolute;
+  right: 20.5vh;
+}
+
+/* 默认时间 */
+.default_time {
+  width: 100%;
+  margin-top: 1vh;
+  font-size: 27rpx;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2vh;
+  margin-left: -2vw;
+  padding-bottom: 2vh;
+  border-bottom: 1rpx #d7d7d7 solid;
+}
+.time_start,
+.time_end {
+  color: #0486f4;
+}
+/* Switch and radio */
+.sware {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30rpx;
+  border-bottom: 1rpx #d7d7d7 solid;
+  padding-bottom: 2vh;
+}
+.body_view,
+.weui_cell {
+  zoom: 0.6;
+}
+/* 二次工艺  加工厂 */
+.chouese0 {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-bottom: 1rpx #d7d7d7 solid;
+  font-size: 30rpx;
+}
+.text0 {
+  margin-left: -5vw;
+}
+/* 选择 颜色   尺码组 */
+.chouese {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-bottom: 1rpx #d7d7d7 solid;
+  font-size: 30rpx;
+  /* margin-bottom: 2vh; */
+}
+.text1 {
+  margin-left: -10vw;
+}
+.input1 {
+  margin-left: 6vw;
+  color: #aaaaaa;
+}
+.input2 {
+  margin-left: 8vw;
+  color: #aaaaaa;
+}
+.push_avada2 {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 37.5vh;
+}
+.push_avada3 {
+  width: 50rpx;
+  height: 50rpx;
+  /* margin-top: 2vh; */
+  position: absolute;
+  right: 0.5vh;
+}
+/* 备注 */
+.textb {
+  font-size: 28rpx;
+  width: 700rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx #d7d7d7 solid;
+  margin-bottom: 2vh;
+  margin-left: 3vw;
+}
+
+.labelb {
+  box-sizing: border-box;
+  float: left;
+  padding-left: 1vw;
+}
+
+.inputb {
+  box-sizing: border-box;
+  /* float: right; */
+  height: 90rpx;
+  width: 480rpx;
+  padding-left: 1vw;
+}
+/* table 表格 */
+.table {
+  display: inline-flex;
+  flex-direction: column;
+  border: 1rpx solid rgba(218, 217, 217, 1);
+  border-bottom: 0;
+  margin-left: 6rpx;
+  margin-bottom: 2vh;
+}
+.table_header {
+  display: inline-flex;
+}
+.th1 {
+  display: flex;
+  flex-direction: column;
+  width: 22vw;
+  height: 90rpx;
+  background-color: #f2f2f2;
+  border-bottom: 1rpx solid rgba(218, 217, 217, 1);
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+.th {
+  display: flex;
+  flex-direction: column;
+  width: 49.5vw;
+  height: 90rpx;
+  background-color: #f2f2f2;
+  border-bottom: 1rpx solid rgba(218, 217, 217, 1);
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+.cell_label {
+  font-size: 26rpx;
+  background-color: #f2f2f2;
+}
+.table_main {
+  display: inline-flex;
+  flex-direction: row;
+}
+.td1 {
+  display: flex;
+  flex-direction: column;
+  width: 22vw;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #d7d7d7;
+  border-top: 0;
+  border-left: 0;
+}
+.td {
+  display: flex;
+  flex-direction: column;
+  width: 49.5vw;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #d7d7d7;
+  border-top: 0;
+  border-left: 0;
+}
+.td_view {
+  border-bottom: 1rpx solid #d7d7d7;
+  width: 100%;
+  text-align: center;
+  line-height: 53rpx;
+  padding-bottom: 1rpx;
+}
+.td_view1 {
+  border-bottom: 1rpx solid #d7d7d7;
+  width: 100%;
+  text-align: center;
+  /* line-height: 6vh; */
+}
+/* 按钮  提交 */
+.content_button {
+  background-color: #1885d9;
+  width: 84vw;
+  font-size: 28rpx;
+  text-align: center;
+  color: white;
+  border-radius: 0.5em;
+  margin-left: 5vw;
+  margin-bottom: 2vh;
+  padding: 1vh;
+}
+/* modal */
+.radio-group {
+  border-bottom: 1px solid #ddd;
+}
+.radio {
+  display: block;
+  border-top: 1px solid #ddd;
+  padding: 5px;
+}

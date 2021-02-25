@@ -1,0 +1,145 @@
+<!-- pages/choose_design-detail/index.wxml -->
+<!-- <text>pages/choose_design-detail/index.wxml</text> -->
+<!-- 头部 的 切换 按钮 -->
+<view class="type-navbar">
+    <view class="type-box" wx:for="{{categories}}" wx:key="index">
+        <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+            {{item.name}}
+        </view>
+    </view>
+</view>
+<!-- 轮播图 -->
+<!-- swiper 轮播图 -->
+<block>
+    <swiper class="swiper_box" indicator-dots="true" vertical="" circular="ture" indicator-active-color="#FFFFFF" autoplay="true" interval="3000" duration="1000">
+        <view>
+            <swiper-item>
+                <block>
+                    <navigator url="/pages/index/index" open-type="redirect">
+                        <image src="../../images/img1.png" class="slide-image" />
+                    </navigator>
+                </block>
+            </swiper-item>
+            <swiper-item>
+                <block>
+                    <navigator url="/pages/index/index" open-type="redirect">
+                        <image src="../../images/img1.png" class="slide-image" />
+                    </navigator>
+                </block>
+            </swiper-item>
+            <swiper-item>
+                <block>
+                    <navigator url="/pages/index/index" open-type="redirect">
+                        <image src="../../images/img1.png" class="slide-image" />
+                    </navigator>
+                </block>
+            </swiper-item>
+        </view>
+    </swiper>
+</block>
+<!-- info -->
+<view hidden="{{activeCategoryId ==1}}">
+    <view class="text-content">
+        <view class="push_text_2">
+            <text class="wenzi">款号：</text>
+            <text class="push_text_h">MPS2020-0012</text>
+        </view>
+        <view>
+            <text class="wenzi">款名：</text>
+            <text class="push_text">{{isHide}}</text>
+        </view>
+        <view>
+            <text class="wenzi">款式分类：</text>
+            <text class="push_text">T恤</text>
+        </view>
+        <view>
+            <text class="wenzi">颜色：</text>
+            <text>黑彩</text>
+        </view>
+        <view>
+            <text class="wenzi">尺码组：</text>
+            <text class="push_text">XS/S/M/L/XXL/XXXL</text>
+        </view>
+        <view>
+            <text class="wenzi">风格：</text>
+            <text class="push_text">下身失踪/嘻哈少女</text>
+        </view>
+        <view>
+            <text class="wenzi">材质：</text>
+            <text class="push_text">速干</text>
+        </view>
+        <view>
+            <text class="wenzi">2020年/夏季：</text>
+            <text class="push_text">100</text>
+        </view>
+        <view>
+            <text class="wenzi">预估价格：</text>
+            <text class="push_text">150</text>
+        </view>
+        <view>
+            <text class="wenzi">做货周期：</text>
+            <text class="push_text">15天</text>
+        </view>
+    </view>
+    <view class="btn-doule" wx:if="{{isShow}}">
+        <button class="reject">不接收</button>
+        <button class="receive">接收</button>   
+    </view>
+    <view class="btn-sigle" wx:if="{{!isShow}}">
+        <button class="reject" wx:if="{{showReject}}" >不接收</button>
+        <button class="receive" wx:if="{{showReceive}}">接收</button>   
+    </view>
+</view>
+  
+
+<!-- more -->
+
+
+<view hidden="{{activeCategoryId == 0}}">
+   <view>
+        <view>
+            <text class="wenzi">品牌：</text>
+            <text class="push_text">衣链云</text>
+        </view>
+        <view>
+            <text class="wenzi">吊牌价：</text>
+            <text class="push_text">200</text>
+        </view>
+        <view>
+            <text class="wenzi">优势：</text>
+            <text class="push_text">黑彩相对好买；适合多种场合；通透凉感；俏皮可爱；已售3000件</text>
+        </view>
+        <view style="margin:10px 0;">
+            <text class="wenzi">备注：</text>
+        </view>
+    </view>
+    <view>
+        <view class="rule_table_title">
+            | 尺码表：
+        </view>
+      
+        <view class="table">
+            <view class="table-tr">
+                <view class="table-th">尺码</view>
+                <view class="table-th">胸围</view>
+                <view class="table-th">摆围</view>
+                <view class="table-th">肩宽</view>
+                <view class="table-th">袖长</view>
+                <view class="table-th">袖围</view>
+                <view class="table-th">领尾</view>
+                <view class="table-th">衣长</view>
+            </view>
+            <view class="table-tr">
+                <view class="table-td">M</view>
+                <view class="table-td">110</view>
+                <view class="table-td">110</view>
+                <view class="table-td">54</view>
+                <view class="table-td">17.5</view>
+                <view class="table-td">18.5</view>
+                <view class="table-td">21</view>
+                <view class="table-td">70</view>
+            </view>
+        </view>
+    </view> 
+</view>
+  

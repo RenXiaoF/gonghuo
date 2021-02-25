@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "生产制单详情",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#3366ff",
+  "enablePullDownRefresh": false
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "SearchBar": "/pages/searchbox/searchbox"
+  },
+  "navigationBarTitleText": "发货管理列表",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#3366ff",
+  "enablePullDownRefresh": false
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas"
+  },
+  "navigationBarBackgroundColor": "#3366ff",
+  "enablePullDownRefresh": false
+}

@@ -1,0 +1,227 @@
+<!-- pages/order_rema_detail/order_rema_detail.wxml -->
+<!-- <text>pages/order_rema_detail/order_rema_detail.wxml</text> -->
+<view class="content">
+    <!-- swiper 轮播图 -->
+    <block>
+        <swiper class="swiper_box" bindchange="swperChange" indicator-dots="true" vertical="" circular="ture" indicator-active-color="#FFFFFF" >
+            <block wx:for="{{imgUrls}}" wx:key="index" wx:for-item="img">
+                <swiper-item>
+                    <block>
+                        <navigator url="/pages/index/index" open-type="redirect">
+                            <image src="../../images/img1.png" class="slide-image" />
+                        </navigator>
+                    </block>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="imageCount">{{current+1}}/{{imgUrls.length}}</view>
+    </block>
+    <!-- 查看更多 -->
+    <!-- 基本信息  订单明细 -->
+    <view class="switch_bar">
+        <view class="type-navbar">
+            <view class="type-box" wx:for="{{categories}}" wx:key="index">
+                <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+                    {{item.name}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bg_content">
+        <view class="mater_content">
+            <!-- bar  0 基本信息 -->
+            <view class="mater_text" hidden="{{activeCategoryId==0?false:true}}">
+                <view class="content_1">
+                    <!-- 第一行 -->
+                    <view class="content_1_title">
+                        <view>
+                            <view>
+                                <text class="content_1_con1">下单时间：</text>
+                            </view>
+                            <view>
+                                <text class="content_1_con1">2020-04-10</text>
+                            </view>
+                        </view>
+                        <view class="content_1_con1">————</view>
+                        <view>
+                            <text class="content_1_con1">待发货</text>
+                        </view>
+                        <view class="content_1_con2">——</view>
+                        <view>
+                            <text class="content_1_con2">剩1天</text>
+                        </view>
+                        <view class="content_1_con2">——</view>
+                        <view>
+                            <view>
+                                <text class="content_1_con2">目标交期：</text>
+                            </view>
+                            <view>
+                                <text class="content_1_con2">2020-04-20</text>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 第二块 -->
+                    <view class="content_1_con">
+                        <view class="content_1_1">
+                            <text class="wenzi1">生产通知单：</text>
+                            <text class="wenzi2">WW2020-0020</text>
+                        </view>
+                        <view class="content_1_2">
+                            <text class="wenzi1">生产订单：</text>
+                            <text class="wenzi2">MPS202003-0001</text>
+                            <text class="push_text_01">返单</text>
+                            <text class="push_text_02">紧急</text>
+                            <text class="push_text_03">CTM</text>
+                        </view>
+                        <view class="content_1_con12">
+                            <view>
+                                <view class="">
+                                    <text class="wenzi1">款号：</text>
+                                    <text class="wenzi2">203503220</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi1">品名：</text>
+                                    <text>黑底花白点休闲女衬衫</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi1">发货地点：</text>
+                                    <text>佛山仓</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi1">大类：</text>
+                                    <text>上装</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi1">主面料：</text>
+                                    <text>M20001/丝光棉</text>
+                                </view>
+                            </view>
+                            <view>
+                                <view>
+                                    <text class="wenzi1">设计款号：</text>
+                                    <text>KX2020020010</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi1">客户/品牌：</text>
+                                    <text>歌莉娅</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi1">下单人：</text>
+                                    <text>张月</text>
+                                </view>
+                                <view class="">
+                                    <text class="wenzi1">小类：</text>
+                                    <text>衬衫</text>
+                                </view>
+                                <view class="">
+                                    <text class="wenzi1">工厂复期：</text>
+                                    <text>2020-4-29</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="content_1_1">
+                            <text class="wenzi1">面料成分：</text>
+                            <text>36%再生纤维素纤维36%聚酯纤维28%棉</text>
+                        </view>
+                        <view class="content_1_2">
+                            <text class="wenzi1">二次工艺：</text>
+                            <text>打揽/压褶</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <!-- 详情 -->
+            <view class="mater_text" hidden="{{activeCategoryId==1?false:true}}">
+                <view class="content_2">
+                    <!-- 产能 -->
+                    <view class="xdmx">产能：</view>
+                    <view class="channeng">
+                        <view class="textb">
+                            <text class="labelb">可能产能:</text>
+                            <input placeholder="请输入..." class="inputb" type="text" name="store_name" bindinput="onInputDes" value="{{inputDes}}" />
+                        </view>
+                        <view class="textb1">
+                            <text class="labelb">计划复期:</text>
+                            <text style="color:red;">*</text>
+                            <picker mode="date" value="{{date}}" bindchange="changeDate">
+                                <view class="tui-picker-detail">{{date}}</view>
+                            </picker>
+                        </view>
+                    </view>
+                    <!-- 下单明细 -->
+                    <view class="xdmx">下单明细：</view>
+                    <view class='table'>
+                        <view class='table_header'>
+                            <view class="th" style='width:199rpx;'>
+                                <view class='cell_label'>颜色</view>
+                            </view>
+                            <block>
+                                <view class='th1'>
+                                    <view class="cell_label ">尺码</view>
+                                </view>
+                                <view class='th'>
+                                    <view class="cell_label ">订单数</view>
+                                </view>
+                                <view class='th'>
+                                    <view class="cell_label " style="color: #7f7f7f;">库存数</view>
+                                </view>
+                            </block>
+                        </view>
+                        <block>
+                            <view class='table_main'>
+                                <!-- 颜色 -->
+                                <view class='td' style='width:200rpx;'>
+                                    <view class=" ">黑色</view>
+                                </view>
+                                <!-- 尺码 -->
+                                <view class='td1'>
+                                    <block>
+                                        <view class="td_view">XS</view>
+                                        <view class="td_view">S</view>
+                                        <view class="td_view">M</view>
+                                        <view class="td_view">L</view>
+                                        <view class="td_view">XL</view>
+                                        <view class="td_view">XXL</view>
+                                        <view class="td_view">XXXL</view>
+                                        <view class="td_view">总数</view>
+                                    </block>
+                                </view>
+                                <!-- 下单数 -->
+                                <view class='td'>
+                                    <block>
+                                        <view class="td_view">20</view>
+                                        <view class="td_view">30</view>
+                                        <view class="td_view">30</view>
+                                        <view class="td_view">40</view>
+                                        <view class="td_view">40</view>
+                                        <view class="td_view">30</view>
+                                        <view class="td_view">30</view>
+                                        <view class="td_view">240</view>
+                                    </block>
+                                </view>
+                                <!-- 实裁数 -->
+                                <view class='td'>
+                                    <block>
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="700" />
+                                    </block>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <!-- bar  2 -->
+            <view class="mater_text" hidden="{{activeCategoryId==2?false:true}}"></view>
+        </view>
+    </view>
+    <!-- 去发货 -->
+    <view class="content_button" bindtap="">去发货</view>
+   
+</view>

@@ -1,0 +1,265 @@
+<!-- pages/Production_follow/Production_follow.wxml -->
+<!-- <text>pages/Production_follow/Production_follow.wxml</text> -->
+<view class="content">
+    <!-- 头部 的 切换 按钮 -->
+    <view class="type-navbar">
+        <view class="type-box" wx:for="{{categories}}" wx:key="index">
+            <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+                {{item.name}}
+            </view>
+        </view>
+    </view>
+    <!-- 切换按钮后显示的 内容 -->
+    <view class="bg_content">
+        <view class="mater_content">
+            <!-- bar  1 -->
+            <view class="mater_text" hidden="{{activeCategoryId==0?false:true}}">
+                <view>
+                    <!-- 1 -->
+                    <view class="content_list">
+                        <view>
+                            <image class="content_image" src="../../images/xnfx1.png" />
+                        </view>
+                        <view class="status">待接单</view>
+                        <view>
+                            <view style="text-align: center;">
+                                <text class="">10单/300件</text>
+                            </view>
+                            <view style="text-align: center;">
+                                <text class="style">超期: 5单/60件</text>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 2 -->
+                    <view class="content_list">
+                        <view>
+                            <image class="content_image" src="../../images/xnfx1.png" />
+                        </view>
+                        <view class="status">生产准备</view>
+                        <view>
+                            <view style="text-align: center;">
+                                <text class="">10单/300件</text>
+                            </view>
+                            <view style="text-align: center;">
+                                <text class="style">超期: 5单/60件</text>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 3 -->
+                    <view class="content_list">
+                        <view>
+                            <image class="content_image" src="../../images/xnfx1.png" />
+                        </view>
+                        <view class="status">裁剪中</view>
+                        <view>
+                            <view style="text-align: center;">
+                                <text class="">10单/300件</text>
+                            </view>
+                            <view style="text-align: center;">
+                                <text class="style">超期: 5单/60件</text>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 4 -->
+                    <view class="content_list">
+                        <view>
+                            <image class="content_image" src="../../images/xnfx1.png" />
+                        </view>
+                        <view class="status">车缝中</view>
+                        <view>
+                            <view style="text-align: center;">
+                                <text class="">10单/300件</text>
+                            </view>
+                            <view style="text-align: center;">
+                                <text class="style">超期: 5单/60件</text>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 5 -->
+                    <view class="content_list">
+                        <view>
+                            <image class="content_image" src="../../images/xnfx1.png" />
+                        </view>
+                        <view class="status">后整中</view>
+                        <view>
+                            <view style="text-align: center;">
+                                <text class="">10单/300件</text>
+                            </view>
+                            <view style="text-align: center;">
+                                <text class="style">超期: 5单/60件</text>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 6 -->
+                    <view class="content_list">
+                        <view>
+                            <image class="content_image" src="../../images/xnfx1.png" />
+                        </view>
+                        <view class="status">已装箱</view>
+                        <view>
+                            <view style="text-align: center;">
+                                <text class="">10单/300件</text>
+                            </view>
+                            <view style="text-align: center;">
+                                <text class="style">超期: 5单/60件</text>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 7 -->
+                    <view class="content_list">
+                        <view>
+                            <image class="content_image" src="../../images/xnfx1.png" />
+                        </view>
+                        <view class="status">已发货</view>
+                        <view>
+                            <view style="text-align: center;">
+                                <text class="">10单/300件</text>
+                            </view>
+                            <view style="text-align: center;">
+                                <text class="style">超期: 5单/60件</text>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 8 -->
+                    <view class="content_list">
+                        <view>
+                            <image class="content_image" src="../../images/xnfx1.png" />
+                        </view>
+                        <view class="status">退货返修</view>
+                        <view>
+                            <view style="text-align: center;">
+                                <text class="">2单/50件</text>
+                            </view>
+                            <view style="text-align: center;">
+                                <text class="style">超期: 0单/0件</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <!-- bar 2 -->
+            <view class="mater_text" hidden="{{activeCategoryId==1?false:true}}">
+                <!-- 默认时间 -->
+                <view class="default_time">
+                    <view class="time_start">
+                        <picker mode="date" value="{{date}}" bindchange="changeDate">
+                            <view class="tui-picker-detail">{{date}}</view>
+                        </picker>
+                    </view>
+                    <view style="color:#D7D7D7;">——</view>
+                    <view class="time_end">
+                        <picker mode="date" value="{{date1}}" bindchange="changeDate1">
+                            <view class="tui-picker-detail">{{date1}}</view>
+                        </picker>
+                    </view>
+                </view>
+                <!-- 搜索框 -->
+                <view class="search-box">
+                    <view class="search-inner">
+                        <SearchBar class="search-cont" id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear"></SearchBar>
+                    </view>
+                </view>
+                <!-- table -->
+                <view class="table">
+                    <view class="tr bg-w">
+                        <view class="th">制单号</view>
+                        <view class="th">款号</view>
+                        <view class="th2">当前状态</view>
+                        <view class="th3">其他操作</view>
+                    </view>
+                    <!-- <block wx:for="{{listData}}" wx:key="{[code]}">
+                        <view class="tr bg-g" wx:if="{{index % 2 == 0}}"> -->
+                    <block>
+                        <!-- 1 -->
+                        <view class="tr bg-g" bindtap="showRight">
+                            <view class="td">MPS2005-0001</view>
+                            <view class="td">KCODE2005-0001</view>
+                            <view class="td2">裁剪中</view>
+                            <view class="td3" style="color:#B3B3B3;">查看详情></view>
+                        </view>
+                        <!-- 2 -->
+                        <view class="tr bg-g">
+                            <view class="td">MPS2005-0001</view>
+                            <view class="td">KCODE2005-0001</view>
+                            <view class="td2">车缝中</view>
+                            <view class="td3" style="color:#B3B3B3;">查看详情></view>
+                        </view>
+                        <!-- 3 -->
+                        <view class="tr bg-g">
+                            <view class="td">MPS2005-0001</view>
+                            <view class="td">KCODE2005-0001</view>
+                            <view class="td2">后整中</view>
+                            <view class="td3" style="color:#B3B3B3;">查看详情></view>
+                        </view>
+                        <!-- 4 -->
+                        <view class="tr bg-g">
+                            <view class="td">MPS2005-0001</view>
+                            <view class="td">KCODE2005-0001</view>
+                            <view class="td2">后整中</view>
+                            <view class="td3" style="color:#B3B3B3;">查看详情></view>
+                        </view>
+                        <!-- 5 -->
+                        <view class="tr bg-g">
+                            <view class="td">MPS2005-0001</view>
+                            <view class="td">KCODE2005-0001</view>
+                            <view class="td2">装箱中</view>
+                            <view class="td3" style="color:#B3B3B3;">查看详情></view>
+                        </view>
+                        <!-- <view class="tr" wx:else>
+                            <view class="td">{{item.code}}</view>
+                            <view class="td">{{item.text}}</view>
+                            <view class="td">{{item.type}}</view>
+                        </view> -->
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 右侧  弹框 -->
+<view class="leftBox '{{leftView?'leftActive':''}}'" bindtap='hideLeft' data-item="1">
+    <view class="left goods-detail '{{leftView?'leftActive':''}}'" catchtap='getleft'>
+        <text class="close-btn iconfont icon-guanbi" catchtap="hideLeft"></text>
+        <view>
+            <view class="tk_jd">生产进度查询</view>
+            <view class="tk_con">
+                <text class="tk_wenzi">制单号：</text>
+                <text>MPS2005-0001</text>
+            </view>
+            <view class="tk_con">
+                <text class="tk_wenzi">款号：</text>
+                <text>KCODE2005-0001</text>
+            </view>
+        </view>
+        <scroll-view scroll-y="true" style="height:85vh">
+            <view class='weui-cell-third'>
+                <block wx:for="{{axis}}" wx:key="*this">
+                    <view class='weui-cell-list'>
+                        <!-- 前面的圆圈 -->
+                        <view wx:if="{{item.event == 0}}" class='weui-cell-circle' style="background-color:#6C6CEB;"></view>
+                        <view wx:elif="{{item.event == 1}}" class='weui-cell-circle' style="background-color:#F59A23;"></view>
+                        <view wx:elif="{{item.event == 2}}" class='weui-cell-circle' style="background-color:#AAAAAA;"></view>
+                        <view wx:else class='weui-cell-circle' style="background-color:red;"></view>
+                        <!-- name and  time -->
+                        <view wx:if="{{item.event == 0}}" class='weui-cell-line' style="color:#6C6CEB;">
+                            <view class='weui-cell-name'>{{item.name}}:</view>
+                            <view class='weui-cell-time'>{{item.time}}</view>
+                        </view>
+                        <view wx:elif="{{item.event == 1}}" class='weui-cell-line' style="color:#F59A23;">
+                            <view class='weui-cell-name'>{{item.name}}:</view>
+                            <view class='weui-cell-time'>{{item.time}}</view>
+                        </view>
+                        <view wx:elif="{{item.event == 2}}" class='weui-cell-line' style="color:#AAAAAA;">
+                            <view class='weui-cell-name'>{{item.name}}:</view>
+                            <view class='weui-cell-time'>{{item.time}}</view>
+                        </view>
+                        <view wx:else class='weui-cell-line3' style="color:red;">
+                            <view class='weui-cell-name'>{{item.name}}:</view>
+                            <view class='weui-cell-time'>{{item.time}}</view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </scroll-view>
+    </view>
+</view>

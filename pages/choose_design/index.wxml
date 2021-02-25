@@ -1,0 +1,276 @@
+<!--pages/choose_design/index.wxml-->
+<!-- <text>pages/choose_design/index.wxml</text> -->
+<view class="content">
+    <view></view>
+    <!-- 默认时间 -->
+    <view class="default_time">
+        <view class="time_start">
+            <picker mode="date" value="{{date}}" bindchange="changeDate">
+                <view class="tui-picker-detail">{{date}}</view>
+            </picker>
+        </view>
+        <!-- <view bindtap="onGotoProductAdd" style="color:#0486f4;">+</view> -->
+        <view style="color:#b0c9e8;">——</view>
+        <view class="time_end">
+            <picker mode="date" value="{{date1}}" bindchange="changeDate1">
+                <view class="tui-picker-detail">{{date1}}</view>
+            </picker>
+        </view>
+    </view>
+    <!-- 搜索框 -->
+    <view class="search-box">
+        <view class="search-inner">
+            <SearchBar class="search-cont" id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear"></SearchBar>
+        </view>
+    </view>
+    <!-- 头部 的 切换 按钮 -->
+    <view class="type-navbar">
+        <view class="type-box" wx:for="{{categories}}" wx:key="index">
+            <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+                {{item.name}}
+            </view>
+        </view>
+    </view>
+    <view class="shop-info">
+        <text class="shop-name" >
+            百顺制衣厂
+        </text>
+        <text class="design-num">
+            共{{activeCategoryId == 3 ? 3 : 1}}款
+        </text>
+    </view>
+
+    <!-- 列表 -->
+    <view class="bg_content">
+        <view class="mater_content">
+            <!-- bar0 -->
+            <view class="mater_text" hidden="{{activeCategoryId==0 || activeCategoryId==3 ? false:true}}">
+                <view class="jiange">
+                    <navigator url="/pages/choose_design_detail/index?tabId=0" open-type="navigate">
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <!-- <view>
+                                    <text class="push_text_01">返单</text>
+                                    <text class="push_text_02">紧急</text>
+                                    <text class="push_text_03">CTM</text>
+                                    <text class="push_text_04">车缝中</text>
+                                </view> -->
+                                <!-- <view class="push_text_1">
+                                    <text class="push_text_06">款号：</text>
+                                    <text class="push_text_05">L20-001</text>
+                                    <text class=""></text>
+                                </view> -->
+                                <view class="push_text_2">
+                                    <text class="wenzi">款号：</text>
+                                    <text class="push_text_h">MPS2020-0013</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text>黑彩</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">风格：</text>
+                                    <text class="">青春靓丽</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">材质：</text>
+                                    <text class="">科技面料</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">吊牌价：</text>
+                                    <text class="">100</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">做货周期：</text>
+                                    <text class="">15天</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">设计师：</text>
+                                    <text class="">张三</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">推款日期：</text>
+                                    <text class="">2020-04-20</text>
+                                    <text class="push_dt">查看详情></text>
+                                    <!-- <text class="arrow"></text> -->
+                                </view>
+                            </view>
+                            <view class="logo_con" wx:if="{{activeCategoryId ==3}}">
+                                <!-- 圆形 -->
+                                <view class="big_ellipse">
+                                    
+                                </view>
+                                <!-- 圆形 -->
+
+                                <view class="small_ellipse">
+                                    
+                                </view> 
+                                <!-- 矩形 -->
+
+                                <view class="text_box">
+                                    待接收
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+            <!-- bar1 -->
+            <view class="mater_text" hidden="{{activeCategoryId==1 || activeCategoryId==3?false:true}}">
+                <view class="jiange">
+                    <navigator url="/pages/choose_design_detail/index?tabId=1" open-type="navigate">
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <!-- <view>
+                                    <text class="push_text_01">返单</text>
+                                    <text class="push_text_02">紧急</text>
+                                    <text class="push_text_03">CTM</text>
+                                    <text class="push_text_04">车缝中</text>
+                                </view> -->
+                                <!-- <view class="push_text_1">
+                                    <text class="push_text_06">款号：</text>
+                                    <text class="push_text_05">L20-001</text>
+                                    <text class=""></text>
+                                </view> -->
+                                <view class="push_text_2">
+                                    <text class="wenzi">款号：</text>
+                                    <text class="push_text_h">MPS2020-0011</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text>黑彩</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">风格：</text>
+                                    <text class="">青春靓丽</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">材质：</text>
+                                    <text class="">科技面料</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">吊牌价：</text>
+                                    <text class="">100</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">做货周期：</text>
+                                    <text class="">15天</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">接收人：</text>
+                                    <text class="">张三</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">接收时间：</text>
+                                    <text class="">2020-04-20</text>
+                                    <text class="push_dt">查看详情></text>
+                                    <!-- <text class="arrow"></text> -->
+                                </view>
+                            </view>
+                            <view class="logo_con_blue" wx:if="{{activeCategoryId ==3}}">
+                                <!-- 圆形 -->
+                                <view class="big_ellipse">
+                                    
+                                </view>
+                                <!-- 圆形 -->
+
+                                <view class="small_ellipse">
+                                    
+                                </view> 
+                                <!-- 矩形 -->
+
+                                <view class="text_box">
+                                    已通过
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+            <!-- bar2 -->
+            <view class="mater_text" hidden="{{activeCategoryId==2 || activeCategoryId==3?false:true}}">
+                <view class="jiange">
+                    <navigator url="/pages/choose_design_detail/index?tabId=2" open-type="navigate">
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <!-- <view>
+                                    <text class="push_text_01">返单</text>
+                                    <text class="push_text_02">紧急</text>
+                                    <text class="push_text_03">CTM</text>
+                                    <text class="push_text_04">车缝中</text>
+                                </view> -->
+                                <!-- <view class="push_text_1">
+                                    <text class="push_text_06">款号：</text>
+                                    <text class="push_text_05">L20-001</text>
+                                    <text class=""></text>
+                                </view> -->
+                                <view class="push_text_2">
+                                    <text class="wenzi">款号：</text>
+                                    <text class="push_text_h">MPS2020-0012</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text>黑彩</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">风格：</text>
+                                    <text class="">青春靓丽</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">材质：</text>
+                                    <text class="">科技面料</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">吊牌价：</text>
+                                    <text class="">100</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">做货周期：</text>
+                                    <text class="">15天</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">拒绝人：</text>
+                                    <text class="">张三</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">拒绝时间：</text>
+                                    <text class="">2020-04-20</text>
+                                    <text class="push_dt">查看详情></text>
+                                    <!-- <text class="arrow"></text> -->
+                                </view>
+                            </view>
+                            <view class="logo_con_red" wx:if="{{activeCategoryId ==3}}">
+                                <!-- 圆形 -->
+                                <view class="big_ellipse">
+                                    
+                                </view>
+                                <!-- 圆形 -->
+
+                                <view class="small_ellipse">
+                                    
+                                </view> 
+                                <!-- 矩形 -->
+
+                                <view class="text_box">
+                                    已拒绝
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

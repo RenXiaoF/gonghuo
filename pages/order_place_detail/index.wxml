@@ -1,0 +1,120 @@
+<!-- pages/order_place_detail/index.wxml -->
+<!-- <text>pages/order_place_detail/index.wxml</text> -->
+<view class="content">
+    <!-- <view class="content_save">保存</view> -->
+    <!-- 生产制单基本信息 -->
+    <view class="content_1">
+        <view class="content_1_title">生产制单基本信息</view>
+        <view class="content_1_con">
+            <view class="content_1_1">
+                <text>生产制单：</text>
+                <text>test2020041700</text>
+                <text class="content_1_1_style" wx:if="{{!isShow}}">未审核</text>
+            </view>
+            <view class="content_1_2">
+                <text>款号：</text>
+                <text>123456</text>
+            </view>
+            <view class="content_1_2">
+                <text>客户：</text>
+                <text>东莞永联</text>
+            </view>
+            <view class="content_1_2">
+                <text>数量：</text>
+                <text>10</text>
+            </view>
+            <view class="content_1_con1">
+                <view>
+                    <view>
+                        <text>是否紧急：</text>
+                        <text>是</text>
+                    </view>
+                    <view>
+                        <text>二次工艺：</text>
+                        <text>压褶、打揽</text>
+                    </view>
+                    <view>
+                        <text>开单日期：</text>
+                        <text>2020-04-17</text>
+                    </view>
+                </view>
+                <view>
+                    <view>
+                        <text>生产方式：</text>
+                        <text>FOB</text>
+                    </view>
+                    <view>
+                        <text>加工厂：</text>
+                        <text>晨光服饰</text>
+                    </view>
+                    <view>
+                        <text>要求货期：</text>
+                        <text>2020-05-17</text>
+                    </view>
+                </view>
+            </view>
+            <view class="content_1_2">
+                <text>备注：</text>
+                <text>测试</text>
+            </view>
+        </view>
+    </view>
+    <!-- 详情信息 -->
+    <view class="content_2">
+        <view class="content_1_title">详情信息</view>
+        <view class='table'>
+            <view class='table_header'>
+                <view class="th" style='width:200rpx;'>
+                    <view class='cell_label'>颜色</view>
+                </view>
+                <block>
+                    <view class='th1'>
+                        <view class="cell_label ">尺码</view>
+                    </view>
+                    <view class='th'>
+                        <view class="cell_label ">数量</view>
+                    </view>
+                </block>
+            </view>
+            <block>
+                <view class='table_main'>
+                    <!-- 颜色 -->
+                    <view class='td' style='width:200rpx;background-color:white;'>
+                        <view class=" ">黑色</view>
+                    </view>
+                    <!-- 尺码 -->
+                    <view class='td1'>
+                        <block>
+                            <view class="td_view">XS</view>
+                            <view class="td_view">S</view>
+                            <view class="td_view">M</view>
+                            <view class="td_view">L</view>
+                            <view class="td_view">XL</view>
+                            <view class="td_view">XXL</view>
+                        </block>
+                    </view>
+                    <!-- 数量 -->
+                    <view class='td'>
+                        <block>
+                            <view class="td_view">100</view>
+                            <view class="td_view">100</view>
+                            <view class="td_view">100</view>
+                            <view class="td_view">100</view>
+                            <view class="td_view">100</view>
+                            <view class="td_view">100</view>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <!-- 审核  返回 -->
+    <block wx:if="{{!isShow}}">
+        <view class="content_button" bindtap="">审核</view>
+        <view class="content_button" bindtap="">返回</view>
+    </block>
+    <view class="pass_btn" wx:if="{{isShow}}">
+        <button  class="canncel">取消</button>
+        <button  class="cancel_audit">撤销审核</button>
+    </view>
+</view>

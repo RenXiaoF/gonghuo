@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "待提交详情",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#3366ff",
+  "enablePullDownRefresh": false
+}

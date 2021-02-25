@@ -1,0 +1,231 @@
+<!-- pages/order_management_detail/index.wxml -->
+<!-- <text>pages/order_management_detail/index.wxml</text> -->
+<view class="content">
+    <!-- <view class="content_save">保存</view> -->
+    <!-- swiper 轮播图 -->
+    <block>
+        <swiper class="swiper_box" bindchange="swperChange" indicator-dots="true" vertical="" circular="ture" indicator-active-color="#FFFFFF" >
+            <block wx:for="{{imgUrls}}" wx:key="index" wx:for-item="img">
+                <swiper-item wx:key="*this">
+                    <block>
+                        <navigator url="/pages/index/index" open-type="redirect">
+                            <image src="{{img}}" class="slide-image" />
+                        </navigator>
+                    </block>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="imageCount">{{current+1}}/{{imgUrls.length}}</view>
+    </block>
+    <!-- 基本信息  订单明细 -->
+    <view class="switch_bar">
+        <view class="type-navbar">
+            <view class="type-box" wx:for="{{categories}}" wx:key="index">
+                <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+                    {{item.name}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bg_content">
+        <view class="mater_content">
+            <!-- bar  0 基本信息 -->
+            <view class="mater_text" hidden="{{activeCategoryId==0?false:true}}">
+                <view class="content_1">
+                    <!-- 第二块 -->
+                    <view class="content_1_con">
+                        <!-- <view class="content_1_1">
+                            <text class="wenzi1">生产通知单：</text>
+                            <text class="wenzi2">WW2020-0020</text>
+                        </view> -->
+                        <view class="content_1_1">
+                            <text class="wenzi1">款号：</text>
+                            <text class="wenzi2">203503220</text>
+                        </view>
+                        <view class="content_1_1">
+                            <text class="wenzi1">款名：</text>
+                            <text class="">速干T恤女中长款hiphop卡通嘻哈少女</text>
+                        </view>
+                        <view class="content_1_2">
+                            <text class="wenzi1">生产订单：</text>
+                            <text class="">MPS202003-0001</text>
+                            <!-- <text class="push_text_01">返单</text>
+                            <text class="push_text_02">紧急</text>
+                            <text class="push_text_03">CTM</text> -->
+                        </view>
+                        <view class="content_1_con12">
+                            <view>
+                                <!-- <view class="">
+                                    <text class="wenzi1">款号：</text>
+                                    <text class="wenzi2">203503220</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi1">品名：</text>
+                                    <text>黑底花白点休闲女衬衫</text>
+                                </view> -->
+                                <view>
+                                    <text class="wenzi1">款式分类：</text>
+                                    <text>T恤</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi1">颜色：</text>
+                                    <text>黑彩</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi1">尺码组：</text>
+                                    <text>XS/S/M/L/XL/XXL/XXXL</text>
+                                </view>
+                            </view>
+                            <view>
+                                <view>
+                                    <text class="wenzi1">风格：</text>
+                                    <text>下身失踪/嘻哈少女</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi1">材质：</text>
+                                    <text>速干</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi1">年份/季节：</text>
+                                    <text>2020年/夏季</text>
+                                </view>
+                                <view class="">
+                                    <text class="wenzi1">预估价格：</text>
+                                    <text>150</text>
+                                </view>
+                                <view class="">
+                                    <text class="wenzi1">做货周期：</text>
+                                    <text>15天</text>
+                                </view>
+                            </view>
+                        </view>
+                        <!-- <view class="content_1_1">
+                            <text class="wenzi1">面料成分：</text>
+                            <text>36%再生纤维素纤维36%聚酯纤维28%棉</text>
+                        </view>
+                        <view class="content_1_2">
+                            <text class="wenzi1">二次工艺：</text>
+                            <text>打揽/压褶</text>
+                        </view> -->
+                    </view>
+                </view>
+            </view>
+            <!-- bar  1 -->
+            <view class="mater_text" hidden="{{activeCategoryId==1?false:true}}">
+                <!-- 生产制单基本信息 -->
+                <view class="content_1">
+                    <view class="content_1_title">生产制单基本信息</view>
+                    <view class="content_1_con">
+                        <view class="content_1_1">
+                            <text>生产制单：</text>
+                            <text>test2020041700</text>
+                            <text class="content_1_1_style">未审核</text>
+                        </view>
+                        <view class="content_1_2">
+                            <text>款号：</text>
+                            <text>123456</text>
+                        </view>
+                        <view class="content_1_2">
+                            <text>客户：</text>
+                            <text>东莞永联</text>
+                        </view>
+                        <view class="content_1_2">
+                            <text>数量：</text>
+                            <text>10</text>
+                        </view>
+                        <view class="content_1_con1">
+                            <view>
+                                <view>
+                                    <text>是否紧急：</text>
+                                    <text>是</text>
+                                </view>
+                                <view>
+                                    <text>二次工艺：</text>
+                                    <text>压褶、打揽</text>
+                                </view>
+                                <view>
+                                    <text>开单日期：</text>
+                                    <text>2020-04-17</text>
+                                </view>
+                            </view>
+                            <view>
+                                <view>
+                                    <text>生产方式：</text>
+                                    <text>FOB</text>
+                                </view>
+                                <view>
+                                    <text>加工厂：</text>
+                                    <text>晨光服饰</text>
+                                </view>
+                                <view>
+                                    <text>要求货期：</text>
+                                    <text>2020-05-17</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="content_1_2">
+                            <text>备注：</text>
+                            <text>测试</text>
+                        </view>
+                    </view>
+                </view>
+
+                <!-- 详情信息 -->
+                <view class="content_2">
+                    <view class="content_1_title">详情信息</view>
+                    <view class='table'>
+                        <view class='table_header'>
+                            <view class="th" style='width:200rpx;'>
+                                <view class='cell_label'>颜色</view>
+                            </view>
+                            <block>
+                                <view class='th1'>
+                                    <view class="cell_label ">尺码</view>
+                                </view>
+                                <view class='th'>
+                                    <view class="cell_label ">数量</view>
+                                </view>
+                            </block>
+                        </view>
+                        <block>
+                            <view class='table_main'>
+                                <!-- 颜色 -->
+                                <view class='td' style='width:200rpx;background-color:white;'>
+                                    <view class=" ">黑色</view>
+                                </view>
+                                <!-- 尺码 -->
+                                <view class='td1'>
+                                    <block>
+                                        <view class="td_view">XS</view>
+                                        <view class="td_view">S</view>
+                                        <view class="td_view">M</view>
+                                        <view class="td_view">L</view>
+                                        <view class="td_view">XL</view>
+                                        <view class="td_view">XXL</view>
+                                    </block>
+                                </view>
+                                <!-- 数量 -->
+                                <view class='td'>
+                                    <block>
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                        <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                                    </block>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 审核  返回 -->
+    <view class="content_buttons">
+        <!-- <view class="content_button" bindtap="">返回</view> -->
+        <view class="content_button" bindtap="">提交</view>
+    </view>
+      
+</view>

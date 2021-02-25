@@ -1,0 +1,218 @@
+<!--pages/confirm_receipt_detail/index.wxml-->
+<!-- <text>pages/confirm_receipt_detail/index.wxml</text> -->
+<!-- 头部 的 切换 按钮 -->
+<view class="type-navbar">
+    <view class="type-box" wx:for="{{categories}}" wx:key="index">
+        <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+            {{item.name}}
+        </view>
+    </view>
+</view>
+
+<!-- 轮播图 -->
+ <!-- swiper 轮播图 -->
+ <view hidden="{{activeCategoryId==0?false:true}}">
+    <block>
+        <swiper class="swiper_box" indicator-dots="true" vertical="" circular="ture" indicator-active-color="#FFFFFF" autoplay="true" interval="3000" duration="1000">
+            <view>
+                <swiper-item>
+                    <block>
+                        <navigator url="/pages/index/index" open-type="redirect">
+                            <image src="../../images/img1.png" class="slide-image" />
+                        </navigator>
+                    </block>
+                </swiper-item>
+                <swiper-item>
+                    <block>
+                        <navigator url="/pages/index/index" open-type="redirect">
+                            <image src="../../images/img1.png" class="slide-image" />
+                        </navigator>
+                    </block>
+                </swiper-item>
+                <swiper-item>
+                    <block>
+                        <navigator url="/pages/index/index" open-type="redirect">
+                            <image src="../../images/img1.png" class="slide-image" />
+                        </navigator>
+                    </block>
+                </swiper-item>
+            </view>
+        </swiper>
+    </block>
+
+    <!-- base-info -->
+    <view class="text-content">
+        <view class="push_text_2">
+            <text class="wenzi">款号：</text>
+            <text class="push_text_h">MPS2020-0012</text>
+        </view>
+        <view>
+            <text class="wenzi">款名：</text>
+            <text class="push_text">速干T恤女中长款hiphop卡通嘻哈少女</text>
+        </view>
+        <view>
+            <text class="wenzi">客户：</text>
+            <text>衣链云</text>
+        </view><view>
+            <text class="wenzi">要求货期：</text>
+            <text>2020-06-30</text>
+        </view><view>
+            <text class="wenzi">下单日期：</text>
+            <text>2020-06-30</text>
+        </view>
+        <view>
+            <text class="wenzi">款式分类：</text>
+            <text class="push_text">T恤</text>
+        </view>
+        <view>
+            <text class="wenzi">是否紧急：</text>
+            <text>是</text>
+        </view>
+        <view>
+            <text class="wenzi">生产方式：</text>
+            <text class="push_text">FOB</text>
+        </view>
+        <view>
+            <text class="wenzi">二次工艺：</text>
+            <text class="push_text"></text>
+        </view>
+        <view>
+            <text class="wenzi">风格：</text>
+            <text class="push_text">下身失踪/嘻哈少女</text>
+        </view>
+        <view>
+            <text class="wenzi">材质：</text>
+            <text class="push_text">速干</text>
+        </view>
+        <view>
+            <text class="wenzi">年份/季节：</text>
+            <text class="push_text">2020/夏季</text>
+        </view>
+        <view>
+            <text class="wenzi">优势：</text>
+            <text class="push_text">黑彩相对好买；适合多种场合；通透凉感；俏皮可爱；已售3000件</text>
+        </view>
+    </view>
+    <view class="btn-sigle">
+        <button class="receive" wx:if="{{showReceive}}">收货</button>   
+    </view>
+</view>
+
+<!-- more -->
+
+<view hidden="{{activeCategoryId==1?false:true}}">
+    <view wx:if="{{!showReceive}}">
+        <view>
+            <text class="wenzi">发货单号：</text>
+            <text class="push_text">SEND2004-0001</text>
+        </view>
+        <view>
+            <text class="wenzi">备注：</text>
+            <text class="push_text">样衣已随货一起发送</text>
+        </view>
+    </view>
+    
+    <view style="margin:10px">
+        <text class="push_text">发货明细</text>
+    </view>
+    <view class="mater_text">
+        <view class="content_2">
+            <view class='table'>
+                <view class='table_header'>
+                    <view class="th" style='width:180rpx;'>
+                        <view class='cell_label'>颜色</view>
+                    </view>
+                    <block>
+                        <view class='th1'>
+                            <view class="cell_label ">尺码</view>
+                        </view>
+                        <view class='th'>
+                            <view class="cell_label ">下单数</view>
+                        </view>
+                        <view class='th'>
+                            <view class="cell_label ">已收数</view>
+                        </view>
+                        <view class='th'>
+                            <view class="cell_label ">收货数</view>
+                        </view>
+                    </block>
+                </view>
+                <block>
+                    <view class='table_main'>
+                        <!-- 颜色 -->
+                        <view class='td' style='width:180rpx;'>
+                            <view class=" ">黑色</view>
+                        </view>
+                        <!-- 尺码 -->
+                        <view class='td1'>
+                            <block>
+                                <view class="td_view">XS</view>
+                                <view class="td_view">S</view>
+                                <view class="td_view">M</view>
+                                <view class="td_view">L</view>
+                                <view class="td_view">XL</view>
+                                <view class="td_view">XXL</view>
+                                <view class="td_view">XXXL</view>
+                                <view class="td_view">总数</view>
+                            </block>
+                        </view>
+                        <!-- 下单数 -->
+                        <view class='td'>
+                            <block>
+                                <view class="td_view">20</view>
+                                <view class="td_view">30</view>
+                                <view class="td_view">30</view>
+                                <view class="td_view">40</view>
+                                <view class="td_view">40</view>
+                                <view class="td_view">30</view>
+                                <view class="td_view">30</view>
+                                <view class="td_view">240</view>
+                            </block>
+                        </view>
+                        <!-- 已收数 -->
+                        <view class='td'>
+                            <block>
+                                <view class="td_view">20</view>
+                                <view class="td_view">35</view>
+                                <view class="td_view">30</view>
+                                <view class="td_view">45</view>
+                                <view class="td_view">45</view>
+                                <view class="td_view">35</view>
+                                <view class="td_view">30</view>
+                                <view class="td_view">260</view>
+                            </block>
+                        </view>
+                        <!-- 收货数 -->
+                        <view class='td'>
+                            <block>
+                                <view class="td_view">20</view>
+                                <view class="td_view">35</view>
+                                <view class="td_view">30</view>
+                                <view class="td_view">45</view>
+                                <view class="td_view">45</view>
+                                <view class="td_view">35</view>
+                                <view class="td_view">30</view>
+                                <view class="td_view">260</view>
+                            </block>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

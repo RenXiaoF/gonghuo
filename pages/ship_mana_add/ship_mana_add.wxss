@@ -1,0 +1,177 @@
+/* pages/ship_mana_add/ship_mana_add.wxss */
+.content {
+  width: 100%;
+  margin-top: 1%;
+}
+
+/* 生产制单基本信息 */
+.content_1 {
+  width: 100%;
+}
+.content_1_con {
+  font-size: 32rpx;
+}
+.content_1_1 {
+  padding-top: 2vh;
+  margin-bottom: 0.5vh;
+  margin-left: 4vw;
+}
+.wenzi1 {
+  color: #7f7f7f;
+}
+.wenzi2 {
+  font-weight: 800;
+}
+.content_1_2 {
+  padding-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  margin-left: 4vw;
+}
+/* 备注 */
+.juanhaoB {
+  float: left;
+  width: 95%;
+  margin-top: 2vh;
+  padding-bottom: 6vh;
+  flex-direction: column;
+  margin-left: 2vh;
+}
+.juanhaoB > view {
+  float: left;
+  width: 15%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.juanhaoB > textarea {
+  width: 80%;
+  height: 100rpx;
+  border: 1rpx solid #ccc;
+  padding-left: 2vh;
+  padding-top: 1vw;
+}
+/* 详情信息 */
+.content_2 {
+  margin-bottom: 3vh;
+}
+.table {
+  display: inline-flex;
+  flex-direction: column;
+  /* border: 1rpx solid #d7d7d7; */
+  border: 1rpx solid #ccc;
+  border-bottom: 0;
+  margin-left: 6rpx;
+}
+.table_header {
+  display: inline-flex;
+}
+.th1 {
+  display: flex;
+  flex-direction: column;
+  width: 22vw;
+  height: 90rpx;
+  background-color: #f2f2f2;
+  border-bottom: 1rpx solid #ccc;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+.th2 {
+  display: block;
+  flex-direction: row;
+  width: 50vw;
+  height: 71rpx;
+  background-color: #f2f2f2;
+  border-bottom: 1rpx solid #ccc;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  text-align: center;
+  padding-top: 20rpx;
+}
+.th {
+  display: flex;
+  flex-direction: column;
+  width: 49.5vw;
+  height: 90rpx;
+  background-color: #f2f2f2;
+  border-bottom: 1rpx solid #ccc;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+.cell_label {
+  font-size: 26rpx;
+  /* background-color: #f2f2f2; */
+}
+.table_main {
+  display: inline-flex;
+  flex-direction: row;
+}
+.image_style {
+  width: 180rpx;
+  height: 220rpx;
+}
+.td1 {
+  display: flex;
+  flex-direction: column;
+  width: 22vw;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ccc;
+  border-top: 0;
+  border-left: 0;
+}
+.td {
+  display: flex;
+  flex-direction: column;
+  width: 49.5vw;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ccc;
+  border-top: 0;
+  border-left: 0;
+}
+.td_view {
+  border-bottom: 1rpx solid #d7d7d7;
+  width: 100%;
+  text-align: center;
+  line-height: 53rpx;
+  padding-bottom: 1rpx;
+}
+.td_view1 {
+  border-bottom: 1rpx solid #d7d7d7;
+  width: 100%;
+  text-align: center;
+  /* line-height: 6vh; */
+}
+/* 审核  返回 */
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: -2vh;
+}
+.content_button {
+  background-color: #1885d9;
+  width: 21.5vw;
+  font-size: 28rpx;
+  text-align: center;
+  color: white;
+  margin-left: 4rpx;
+  margin-bottom: 2vh;
+  padding: 1vh;
+}
+.content_button1 {
+  background-color: #f59a23;
+  width: 21.5vw;
+  font-size: 28rpx;
+  text-align: center;
+  color: white;
+  /* border-radius: 0.5em; */
+  margin-left: 4rpx;
+  margin-bottom: 2vh;
+  padding: 1vh;
+}

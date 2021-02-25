@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "SearchBar": "/pages/searchbox/searchbox"
+  },
+  "navigationBarTitleText": "收货",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#3366ff",
+  "enablePullDownRefresh": false
+}

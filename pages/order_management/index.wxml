@@ -1,0 +1,396 @@
+<!-- pages/order_management/index.wxml -->
+<!-- <text>pages/order_management/index.wxml</text> -->
+<!-- 送料管理 -->
+<view class="content">
+    <view></view>
+    <!-- 默认时间 -->
+    <!-- <view class="default_time">
+        <view class="time_start">
+            <picker mode="date" value="{{date}}" bindchange="changeDate">
+                <view class="tui-picker-detail">{{date}}</view>
+            </picker>
+        </view>
+        <view>———</view>
+        <view class="time_end">
+            <picker mode="date" value="{{date1}}" bindchange="changeDate1">
+                <view class="tui-picker-detail">{{date1}}</view>
+            </picker>
+        </view>
+    </view> -->
+    <!-- 搜索框 -->
+    <view class="search-box">
+        <view class="search-inner">
+            <SearchBar class="search-cont" id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear"></SearchBar>
+        </view>
+         <!-- 添加 -->
+        <view class="nav">
+            <view class="nav-item" bindtap="changeTab" bindtap="openFilterModal">
+                <view class="ico-filter">
+                    <image class="wh100" src="../../images/xx.png"></image>
+                </view>
+                筛选
+            </view>
+            <view>
+                <image bindtap="onGotoProductAdd" class="srarch_img" src="../../images/tbadd1.png" />
+            </view>
+        </view>
+    </view>
+     <!-- 头部 的 切换 按钮 -->
+    <view class="type-navbar">
+        <view class="type-box" wx:for="{{categories}}" wx:key="index">
+            <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+                {{item.name}}({{item.count}}款)
+            </view>
+        </view>
+    </view>
+    <view class="bg_content">
+        <!-- 内容 -->
+        <view class="mater_content">
+            <!-- 待提交 -->
+            <view class="mater_text" hidden="{{activeCategoryId==0?false:true}}">
+                <view class="jiange">
+                    <navigator url="/pages/order_management_detail/index" open-type="navigate">
+                        <!-- 第一个示例 -->
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <!-- <view>
+                                    <text class="push_text_01">返单</text>
+                                    <text class="push_text_02">紧急</text>
+                                    <text class="push_text_03">CTM</text>
+                                    <text class="push_text_04">车缝中</text>
+                                    <image class="push_delete" src="../../images/dele.png" />
+                                </view> -->
+                                <view>
+                                    <text style="font-weight: 700;">款号：</text>
+                                    <text style="font-weight: 700;">203503220B</text>
+                                    <image class="push_delete" src="../../images/dele.png" />
+                                </view>
+                                <view>
+                                    <text class="wenzi">款名：</text>
+                                    <text class="">黑底花白点休闲女衬衫</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text class="">黑底白点</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">风格：</text>
+                                    <text class="">青春靓丽</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">材质：</text>
+                                    <text class="">科技面料</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">预估价格：</text>
+                                    <text class="">150</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">做货周期：</text>
+                                    <text class="">15天</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">设计师：</text>
+                                    <text class="">张三</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">客户：</text>
+                                    <text class="">衣链云</text>
+                                    <text class="push_dt">查看详情></text>
+                                </view>
+                                <!-- <view class="push_text_1">
+                                    <text class="push_text_06">要求货期：</text>
+                                    <text class="push_text_05">2020-04-29</text>
+                                    <text class="">(歌莉娅)</text>
+                                </view>
+                                <view class="push_text_2">
+                                    <text class="wenzi">生产制单：</text>
+                                    <text class="push_text_h">MPS2020-0012</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单数：</text>
+                                    <text class="">100</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单人：</text>
+                                    <text class="">张三</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单日期：</text>
+                                    <text class="">2020-04-20</text>
+                                    <text class="push_dt">查看详情></text>
+                                    <text class="arrow"></text>
+                                </view> -->
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+                <view class="jiange">
+                    <navigator url="/pages/order_management_detail/index" open-type="navigate">
+                        <!-- 第二个示例 -->
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <view>
+                                    <text style="font-weight: 700;">款号：</text>
+                                    <text style="font-weight: 700;">203503220B</text>
+                                    <image class="push_delete" src="../../images/dele.png" />
+                                </view>
+                                <view>
+                                    <text class="wenzi">款名：</text>
+                                    <text class="">黑底花白点休闲女衬衫</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text class="">黑底白点</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">风格：</text>
+                                    <text class="">青春靓丽</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">材质：</text>
+                                    <text class="">科技面料</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">预估价格：</text>
+                                    <text class="">150</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">做货周期：</text>
+                                    <text class="">15天</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">设计师：</text>
+                                    <text class="">张三</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">客户：</text>
+                                    <text class="">衣链云</text>
+                                    <text class="push_dt">查看详情></text>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+            <!-- 已提交 -->
+            <view class="mater_text" hidden="{{activeCategoryId==1?false:true}}">
+                <view class="jiange">
+                    <navigator url="/pages/order_management02_detail/index" open-type="navigate">
+                        <!-- 第一个示例 -->
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <view>
+                                    <text style="font-weight: 700;">款号：</text>
+                                    <text style="font-weight: 700;">203503220B</text>
+                                    <image class="push_delete" src="../../images/dele.png" />
+                                </view>
+                                <view>
+                                    <text class="wenzi">款名：</text>
+                                    <text class="">黑底花白点休闲女衬衫</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text class="">黑底白点</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">风格：</text>
+                                    <text class="">青春靓丽</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">材质：</text>
+                                    <text class="">科技面料</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">预估价格：</text>
+                                    <text class="">150</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">做货周期：</text>
+                                    <text class="">15天</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">设计师：</text>
+                                    <text class="">张三</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">客户：</text>
+                                    <text class="">衣链云</text>
+                                    <text class="push_dt">查看详情></text>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+                <view class="jiange">
+                    <navigator url="/pages/order_management_detail/index" open-type="navigate">
+                        <!-- 第二个示例 -->
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <view>
+                                    <text style="font-weight: 700;">款号：</text>
+                                    <text style="font-weight: 700;">203503220B</text>
+                                    <image class="push_delete" src="../../images/dele.png" />
+                                </view>
+                                <view>
+                                    <text class="wenzi">款名：</text>
+                                    <text class="">黑底花白点休闲女衬衫</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text class="">黑底白点</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">风格：</text>
+                                    <text class="">青春靓丽</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">材质：</text>
+                                    <text class="">科技面料</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">预估价格：</text>
+                                    <text class="">150</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">做货周期：</text>
+                                    <text class="">15天</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">设计师：</text>
+                                    <text class="">张三</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">客户：</text>
+                                    <text class="">衣链云</text>
+                                    <text class="push_dt">查看详情></text>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+            <!-- 全部 -->
+            <view class="mater_text" hidden="{{activeCategoryId==2?false:true}}">
+                <view class="jiange">
+                    <navigator url="/pages/order_management_detail/index" open-type="navigate">
+                        <!-- 第一个示例 -->
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <view>
+                                    <text style="font-weight: 700;">款号：</text>
+                                    <text style="font-weight: 700;">203503220B</text>
+                                    <image class="push_delete" src="../../images/dele.png" />
+                                </view>
+                                <view>
+                                    <text class="wenzi">款名：</text>
+                                    <text class="">黑底花白点休闲女衬衫</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text class="">黑底白点</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">风格：</text>
+                                    <text class="">青春靓丽</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">材质：</text>
+                                    <text class="">科技面料</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">预估价格：</text>
+                                    <text class="">150</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">做货周期：</text>
+                                    <text class="">15天</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">设计师：</text>
+                                    <text class="">张三</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">客户：</text>
+                                    <text class="">衣链云</text>
+                                    <text class="push_dt">查看详情></text>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+                <view class="jiange">
+                    <navigator url="/pages/order_management02_detail/index" open-type="navigate">
+                        <!-- 第二个示例 -->
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <view>
+                                    <text style="font-weight: 700;">款号：</text>
+                                    <text style="font-weight: 700;">203503220B</text>
+                                    <image class="push_delete" src="../../images/dele.png" />
+                                </view>
+                                <view>
+                                    <text class="wenzi">款名：</text>
+                                    <text class="">黑底花白点休闲女衬衫</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text class="">黑底白点</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">风格：</text>
+                                    <text class="">青春靓丽</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">材质：</text>
+                                    <text class="">科技面料</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">预估价格：</text>
+                                    <text class="">150</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">做货周期：</text>
+                                    <text class="">15天</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">设计师：</text>
+                                    <text class="">张三</text>
+                                </view>
+                                 <view>
+                                    <text class="wenzi">客户：</text>
+                                    <text class="">衣链云</text>
+                                    <text class="push_dt">查看详情></text>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

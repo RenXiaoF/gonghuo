@@ -1,0 +1,94 @@
+<!-- pages/ship_mana_add/ship_mana_add.wxml -->
+<!-- <text>pages/ship_mana_add/ship_mana_add.wxml</text> -->
+<view class="content">
+    <!-- 生产制单基本信息 -->
+    <view class="content_1">
+        <view class="content_1_con">
+            <view class="content_1_1">
+                <text class="wenzi1">发货单号：</text>
+                <text class="wenzi2">SEND2004-0001</text>
+            </view>
+            <view class="content_1_2">
+                <text class="wenzi1">生产通知单：</text>
+                <text>WW2020-0020</text>
+            </view>
+            <view class="content_1_2">
+                <text class="wenzi1">生产订单：</text>
+                <text>MPS202003-0001</text>
+            </view>
+            <view class="content_1_2">
+                <text class="wenzi1">款号：</text>
+                <text>203503220</text>
+            </view>
+            <view class="content_1_2">
+                <text class="wenzi1">品名：</text>
+                <text>黑底花白点休闲女衬衫</text>
+            </view>
+            <view class="juanhaoB">
+                <view class="wenzi1">备注：</view>
+                <textarea bindblur=""  placeholder="请输入备注" bindinput="onInputDes" value="{{inputDes}}" />
+            </view>
+        </view>
+    </view>
+    <!-- 详情信息 -->
+    <view class="content_2">
+        <view class='table'>
+            <view class='table_header'>
+                <view class="th" style='width:200rpx;'>
+                    <!-- <view class='cell_label'>颜色</view> -->
+                </view>
+                <block>
+                    <view class='th1'>
+                        <view class="cell_label ">尺码</view>
+                    </view>
+                    <view class='th2'>
+                        <text class="" style="color:red;">*</text>
+                        <text class="cell_label ">发货数</text>
+                    </view>
+                </block>
+            </view>
+            <block>
+                <view class='table_main'>
+                    <!-- 颜色 -->
+                    <view class='td' style='width:200rpx;background-color:white;'>
+                        <view class=" ">黑底白点</view>
+                        <image class="image_style" src="../../images/img1.png" />
+                    </view>
+                    <!-- 尺码 -->
+                    <view class='td1'>
+                        <block>
+                            <view class="td_view">XS</view>
+                            <view class="td_view">S</view>
+                            <view class="td_view">M</view>
+                            <view class="td_view">L</view>
+                            <view class="td_view">XL</view>
+                            <view class="td_view">XXL</view>
+                            <view class="td_view">XXXL</view>
+                            <view class="td_view">总数</view>
+                        </block>
+                    </view>
+                    <!-- 数量 -->
+                    <view class='td'>
+                        <block>
+                           <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="0" />
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="0" />
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="0" />
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="0" />
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="0" />
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="0" />
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="0" />
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="0" />
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <!-- 审核  返回 -->
+    <view class="buttons">
+        <view class="content_button1" bindtap="">保存</view>
+        <view class="content_button1" bindtap="">打印箱唛</view>
+        <view class="content_button1" bindtap="">打印发货单</view>
+        <view class="content_button" bindtap="">确认发货</view>
+    </view>
+</view>

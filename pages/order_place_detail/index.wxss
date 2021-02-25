@@ -1,0 +1,153 @@
+/* pages/order_place_detail/index.wxss */
+.content {
+  width: 100%;
+  margin-top: 1%;
+}
+/* 保存 */
+.content_save {
+  color: #0486f4;
+  /* float: right; */
+  margin-left: 85%;
+}
+/* 生产制单基本信息 */
+.content_1 {
+  width: 100%;
+}
+.content_1_title {
+  color: white;
+  background-color: #9999a2;
+  border-radius: 0.5em;
+  padding-left: 4vw;
+  font-size: 35rpx;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+}
+.content_1_con {
+  background-color: #f4f6f8;
+  font-size: 32rpx;
+}
+.content_1_1 {
+  padding-top: 2vh;
+  margin-bottom: 0.5vh;
+  margin-left: 4vw;
+}
+.content_1_1_style {
+  color: red;
+  float: right;
+  margin-right: 4vw;
+}
+.content_1_2 {
+  padding-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  margin-left: 4vw;
+}
+.content_1_con1 {
+  display: flex;
+  justify-content: space-around;
+}
+/* 详情信息 */
+.content_2 {
+  margin-bottom: 3vh;
+}
+.table {
+  display: inline-flex;
+  flex-direction: column;
+  border: 1rpx solid rgba(218, 217, 217, 1);
+  border-bottom: 0;
+  margin-left: 6rpx;
+}
+.table_header {
+  display: inline-flex;
+}
+.th1 {
+  display: flex;
+  flex-direction: column;
+  width: 22vw;
+  height: 90rpx;
+  background-color: #f2f2f2;
+  border-bottom: 1rpx solid rgba(218, 217, 217, 1);
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+.th {
+  display: flex;
+  flex-direction: column;
+  width: 49.5vw;
+  height: 90rpx;
+  background-color: #f2f2f2;
+  border-bottom: 1rpx solid rgba(218, 217, 217, 1);
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+.cell_label {
+  font-size: 26rpx;
+  background-color: #f2f2f2;
+}
+.table_main {
+  display: inline-flex;
+  flex-direction: row;
+}
+.td1 {
+  display: flex;
+  flex-direction: column;
+  width: 22vw;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #d7d7d7 ;
+  border-top: 0;
+  border-left: 0;
+}
+.td {
+  display: flex;
+  flex-direction: column;
+  width: 49.5vw;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #d7d7d7 ;
+  border-top: 0;
+  border-left: 0;
+}
+.td_view {
+  border-bottom: 1rpx solid #d7d7d7 ;
+  width: 100%;
+  text-align: center;
+  line-height: 6vh;
+}
+/* 审核  返回 */
+.content_button {
+  background-color: #1885d9;
+  width: 84vw;
+  font-size: 28rpx;
+  text-align: center;
+  color: white;
+  border-radius: 0.5em;
+  margin-left: 5vw;
+  margin-bottom: 2vh;
+  padding: 1vh;
+}
+.pass_btn{
+  display: flex;
+}
+.pass_btn .canncel{
+  display:block;
+  width: 30%;
+  background-color: #f59a23;
+  border: 1px solid blue;
+  font-size: 15px;
+  color: #fff;
+  margin:0 auto;
+}
+.pass_btn .cancel_audit{
+  display:block;
+  width: 70%;
+  background-color: red;
+  border: 1px solid blue;
+  font-size: 15px;
+  color: #fff;
+  margin:0 auto;
+
+}

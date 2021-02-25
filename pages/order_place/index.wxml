@@ -1,0 +1,196 @@
+<!-- pages/order_place/index.wxml -->
+<!-- <text>pages/order_place/index.wxml</text> -->
+<!-- 送料管理 -->
+<view class="content">
+    <view></view>
+    <!-- 默认时间 -->
+    <view class="default_time">
+        <view class="time_start">
+            <picker mode="date" value="{{date}}" bindchange="changeDate">
+                <view class="tui-picker-detail">{{date}}</view>
+            </picker>
+        </view>
+        <view style="color:#b0c9e8;">——</view>
+        <view class="time_end">
+            <picker mode="date" value="{{date1}}" bindchange="changeDate1">
+                <view class="tui-picker-detail">{{date1}}</view>
+            </picker>
+        </view>
+    </view>
+    <!-- 搜索框 -->
+    <view class="search-box">
+        <view class="search-inner">
+            <SearchBar class="search-cont" id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear"></SearchBar>
+            <view bindtap="onGotoProductAdd" style="color:#0486f4;font-size:24px;font-weight:900">+</view>
+        </view>
+        
+    </view>
+
+
+    <!-- 头部 的 切换 按钮 -->
+    <view class="type-navbar">
+        <view class="type-box" wx:for="{{categories}}" wx:key="index">
+            <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+                {{item.name}}
+            </view>
+        </view>
+    </view>
+    <view class="shop-info">
+        <text class="shop-name" >
+            百顺制衣厂
+        </text>
+        <text class="design-num">
+            共{{activeCategoryId == 3 ? 3 : 1}}款
+        </text>
+    </view>
+    <view class="bg_content">
+        <!-- 内容 -->
+        <view class="mater_content">
+            <!--  -->
+            <view class="mater_text">
+                <view class="jiange" hidden="{{activeCategoryId == 0 ? true:false}}">
+                    <navigator url="/pages/order_place_detail/index?tabId=0" open-type="navigate">
+                        <!-- 第一个示例 -->
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <view>
+                                    <text class="push_text_01">返单</text>
+                                    <text class="push_text_02">紧急</text>
+                                    <text class="push_text_03">CTM</text>
+                                    <!-- <text class="push_text_04">车缝中</text> -->
+                                </view>
+                                <view class="push_text_1">
+                                    <text class="push_text_06">要求货期：</text>
+                                    <text class="push_text_05">2020-04-29</text>
+                                    <text class="">(歌莉娅)</text>
+                                </view>
+                                <view class="push_text_2">
+                                    <text class="wenzi">生产制单：</text>
+                                    <text class="push_text_h">MPS2020-0012</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">款号：</text>
+                                    <text>203503220B</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">款名：</text>
+                                    <text class="">黑底花白点休闲女衬衫</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text class="">黑底白点</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单数：</text>
+                                    <text class="">100</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单人：</text>
+                                    <text class="">张三</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单日期：</text>
+                                    <text class="">2020-04-20</text>
+                                    <text class="push_dt">查看详情></text>
+                                    <!-- <text class="arrow"></text> -->
+                                </view>
+                            </view>
+
+                            <view class="logo_con" hidden="{{activeCategoryId == 0 ||activeCategoryId ==1}}">
+                                <!-- 圆形 -->
+                                <view class="big_ellipse">
+                                    
+                                </view>
+                                <!-- 圆形 -->
+
+                                <view class="small_ellipse">
+                                    
+                                </view> 
+                                <!-- 矩形 -->
+
+                                <view class="text_box">
+                                    已审核
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+                <view class="jiange"hidden="{{activeCategoryId == 1 ? true:false}}">
+                    <navigator url="/pages/order_place_detail/index?tabId=1" open-type="navigate">
+                        <!-- 第二个示例 -->
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <view>
+                                    <text class="push_text_01">首单</text>
+                                    <text class="push_text_03">FOB</text>
+                                    <!-- <text class="push_text_04">车缝中</text> -->
+                                </view>
+                                <view class="push_text_1">
+                                    <text class="push_text_06">要求货期：</text>
+                                    <text class="push_text_05">2020-04-29</text>
+                                    <text class="">(歌莉娅)</text>
+                                </view>
+                                <view class="push_text_2">
+                                    <text class="wenzi">生产制单：</text>
+                                    <text class="push_text_h">MPS2020-0013</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">款号：</text>
+                                    <text>203503220B</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">款名：</text>
+                                    <text class="">黑底花白点休闲女衬衫</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text class="">黑底白点</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单数：</text>
+                                    <text class="">100</text>
+                                    <text class="" style="color:#8400FF;">(压褶/打揽)</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单人：</text>
+                                    <text class="">张三</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单日期：</text>
+                                    <text class="">2020-04-20</text>
+                                    <text class="push_dt">查看详情></text>
+                                    <!-- <text class="arrow"></text> -->
+                                </view>
+                            </view>
+
+                            <view class="logo_con_blue" hidden="{{activeCategoryId == 0 ||activeCategoryId ==1}}">
+                                <!-- 圆形 -->
+                                <view class="big_ellipse">
+                                    
+                                </view>
+                                <!-- 圆形 -->
+
+                                <view class="small_ellipse">
+                                    
+                                </view> 
+                                <!-- 矩形 -->
+
+                                <view class="text_box">
+                                    待审核
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

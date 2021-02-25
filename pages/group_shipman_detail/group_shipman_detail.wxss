@@ -1,0 +1,292 @@
+/* pages/group_shipman_detail/group_shipman_detail.wxss */
+/* 0. 最大的容器 */
+.content {
+  width: 100%;
+}
+/* 1. swiper 轮播图 */
+.swiper_box {
+  position: relative;
+}
+swiper {
+  width: 100%;
+  height: 45vh;
+}
+.slide-image {
+  width: 60%;
+  /* height: calc(100vw * 240 / 214); */
+  height: 45vh;
+  margin-left: 20%;
+}
+.image_more {
+  width: 128rpx;
+  height: 128rpx;
+  position: fixed;
+  top: 37vh;
+  right: 0vw;
+  /* 圆角 */
+  /* -webkit-border-radius: 0.5em;
+      -moz-border-radius: 0.5em;
+      border-radius: 0.5em; */
+}
+.image_more1 {
+  width: 100rpx;
+  height: 100rpx;
+}
+/* 基本信息  订单明细 */
+.type-navbar {
+  display: flex;
+  justify-content: center;
+  width: 97%;
+  /* height: 80rpx; */
+  /* margin-bottom: 20rpx; */
+  background-color: #fff;
+  /* border: 1px solid #ccc; */
+  margin-top: 2vh;
+  margin-left: 1%;
+  border-radius: 0.5em;
+}
+.type-box {
+  width: 50%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 76rpx;
+  padding: 0 20rpx;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+}
+.type-navbar-item {
+  border-bottom: 4rpx solid #fff;
+}
+
+.type-item-on {
+  font-size: 21 !important;
+  font-weight: 700;
+  color: #0486f4;
+  position: relative;
+}
+.type-item-on::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  color: #0486f4 !important;
+  background: #f59a23;
+  border-radius: 2px;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/*  点击切换 switch bar  时 显示的内容 */
+.switch_bar {
+}
+.bg_content {
+  margin-top: 1vh;
+  margin-bottom: 5vh;
+}
+.mater_content {
+  background-color: white;
+  position: relative;
+  width: 100%;
+}
+.mater_text {
+  width: 100%;
+  border: 1rpx solid #f2f2f2;
+  padding-top: 1vh;
+}
+/* bar 0 基本信息 */
+/* 基本信息  第一行 */
+.content_1_con1 {
+  color: #0486f4;
+}
+.content_1_con2 {
+  color: red;
+}
+/* 基本信息  第二块 */
+.content_1 {
+  width: 100%;
+}
+.content_1_title {
+  padding-left: 2vw;
+  font-size: 25rpx;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  display: flex;
+  justify-content: space-around;
+}
+.content_1_con {
+  /* background-color: #f4f6f8; */
+  font-size: 30rpx;
+  margin-bottom: 5vh;
+}
+.content_1_1 {
+  padding-top: 2vh;
+  margin-bottom: 0.5vh;
+  margin-left: 1.5vw;
+}
+.content_1_2 {
+  padding-top: 1vh;
+  margin-bottom: 1vh;
+  margin-left: 1.5vw;
+}
+.wenzi1 {
+  color: #7f7f7f;
+}
+.wenzi2 {
+  font-weight: 800;
+}
+.push_text_01 {
+  color: white;
+  background-color: #f59a23;
+  padding: 2rpx 9rpx;
+}
+.push_text_02 {
+  color: white;
+  background-color: red;
+  padding: 2rpx 9rpx;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.push_text_03 {
+  color: white;
+  background-color: #c280ff;
+  padding: 2rpx 9rpx;
+}
+
+.content_1_con12 {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30rpx;
+}
+/* bar 0 基本信息 */
+.content_2 {
+  margin-bottom: 3vh;
+}
+.table {
+  display: inline-flex;
+  flex-direction: column;
+  border: 1rpx solid rgba(218, 217, 217, 1);
+  border-bottom: 0;
+  margin-left: 6rpx;
+}
+.table_header {
+  display: inline-flex;
+}
+.th1 {
+  display: flex;
+  flex-direction: column;
+  width: 22.1vw;
+  height: 90rpx;
+  background-color: #f2f2f2;
+  border-bottom: 1rpx solid #ccc;
+  border-left: 1rpx solid #ccc;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+.th {
+  display: flex;
+  flex-direction: column;
+  width: 24.5vw;
+  height: 90rpx;
+  background-color: #f2f2f2;
+  border-bottom: 1rpx solid #ccc;
+  border-left: 1rpx solid #ccc;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+.cell_label {
+  font-size: 26rpx;
+  background-color: #f2f2f2;
+}
+.table_main {
+  display: inline-flex;
+  flex-direction: row;
+}
+.td1 {
+  display: flex;
+  flex-direction: column;
+  width: 22vw;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  /* border: 1rpx solid #f2f2f2; */
+  /* border: 1rpx solid #cccccc; */
+  border-top: 0;
+  border-left: 0;
+}
+.td {
+  display: flex;
+  flex-direction: column;
+  width: 24.5vw;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #cccccc;
+  border-top: 0;
+  /* border-left: 0; */
+}
+.td_view {
+  border-bottom: 1rpx solid #ccc;
+  width: 100%;
+  text-align: center;
+  line-height: 6vh;
+}
+/* 去发货  types == 0 */
+.content_button {
+  position: fixed;
+  bottom: -2vh;
+  background-color: #1885d9;
+  width: 84vw;
+  font-size: 28rpx;
+  text-align: center;
+  color: white;
+  border-radius: 0.5em;
+  margin-left: 5vw;
+  margin-bottom: 2vh;
+  padding: 2vh;
+  /* 透明度 */
+  opacity: 0.9;
+}
+/* 打印箱唛  打印发货单 types == 1 */
+.content_1_con21 {
+  color: red;
+  font-size: 20rpx;
+  width: 40px;
+}
+.buttons {
+  position: fixed;
+  bottom: -2vh;
+  display: flex;
+  /* 透明度 */
+  opacity: 0.9;
+}
+.content_button1 {
+  background-color: #1885d9;
+  width: 43vw;
+  font-size: 28rpx;
+  text-align: center;
+  color: white;
+  margin-left: 0vw;
+  margin-bottom: 2vh;
+  padding: 2vh;
+}
+.content_button2 {
+  background-color: #f59a23;
+  width: 43vw;
+  font-size: 28rpx;
+  text-align: center;
+  color: white;
+  margin-left: 0.5vw;
+  margin-bottom: 2vh;
+  padding: 2vh;
+}
+/* 打印箱唛  打印发货单 types == 2 */
+.content_1_con22 {
+  color: #0486f4;
+  font-size: 20rpx;
+  width: 40px;
+}

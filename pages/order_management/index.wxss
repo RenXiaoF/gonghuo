@@ -1,0 +1,237 @@
+/* pages/order_management/index.wxss */
+page {
+  background: #edf0f7;
+}
+.content {
+  width: 100%;
+  /* background-color: #f2f2f2; */
+}
+
+/* 默认时间 */
+.default_time {
+  width: 100%;
+  margin-top: 1vh;
+  background-color: white;
+  font-size: 27rpx;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1vh;
+  color: #b0c4de;
+}
+.time_start {
+}
+.time_end {
+}
+/* 搜索框 */
+.search-box {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.search-inner {
+  /* 圆角 */
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+.srarch_img {
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 2.5vh;
+  margin-left: 2vh;
+}
+.nav {
+  height: 9vh;
+  display: flex;
+}
+.nav-item {
+  align-items: center;
+  font-size: 28rpx;
+  margin-top: 2vh;
+  margin-right: 1vh;
+}
+.ico-filter {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+  line-height: 0;
+}
+.wh100 {
+  width: 40rpx;
+  height: 40rpx;
+}
+.search-cont {
+  /* height: 58rpx; */
+  width: 95%;
+  /* padding-left: 12rpx; */
+  /* line-height: 58rpx; */
+  font-size: 24rpx;
+}
+
+/* 头部 的 切换 按钮 */
+.type-navbar {
+  display: flex;
+  background-color: #fff;
+  margin-top: 2vh;
+  border-bottom: 1rpx solid #e6e6e6;
+  padding-bottom: 1vh;
+  justify-content: center;
+}
+.type-box {
+  width: 30%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 76rpx;
+  padding: 0 20rpx;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+}
+.type-navbar-item {
+  border-bottom: 4rpx solid #fff;
+}
+
+.type-item-on {
+  font-size: 21 !important;
+  font-weight: 700;
+  color: #0486f4;
+  position: relative;
+}
+.type-item-on::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  color: #0486f4 !important;
+  background: #0486f4;
+  border-radius: 2px;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+/* 公司名称、内容背景 */
+.bg_content {
+  background: #eef1f8;
+  padding: 20rpx 0 20rpx;
+  font-size: 30rpx;
+}
+
+/* 内容 */
+.mater_content {
+  background-color: white;
+  position: relative;
+  width: 100%;
+}
+
+.mater_text {
+  width: 100%;
+  /* border-bottom: 2vw solid #f2f2f2; */
+}
+
+.wenzi {
+  color: #666666;
+}
+.mater_text .navigator {
+  display: flex;
+  /* 调整 内容 空间  使内容成为一行 */
+  justify-content: space-between;
+  padding: 2vh;
+}
+.mater_text navigator {
+  display: flex;
+  /* 调整 内容 空间  使内容成为一行 */
+  justify-content: space-between;
+  padding: 2vh;
+}
+
+.push_con {
+  /* width: 100%; */
+  justify-content: space-around;
+  display: flex;
+}
+.push_text {
+  color: black;
+  flex-direction: column;
+  display: inline-flex;
+  font-size: 29rpx;
+}
+.push_text_01 {
+  color: white;
+  background-color: #f59a23;
+  padding: 2rpx 9rpx;
+}
+.push_text_02 {
+  color: white;
+  background-color: red;
+  padding: 2rpx 9rpx;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.push_text_03 {
+  color: white;
+  background-color: #c280ff;
+  padding: 2rpx 9rpx;
+}
+.push_text_04 {
+  color: red;
+  /* margin-left: 20vw; */
+  position: absolute;
+  right: 3vw;
+}
+.push_text_06 {
+  color: red;
+}
+.push_text_05 {
+  color: red;
+  font-weight: 800;
+}
+.totle_time {
+  justify-self: center;
+  flex-direction: column;
+  display: inline-flex;
+}
+.push_text_1 {
+  margin-top: 1vh;
+}
+.push_text_2 {
+}
+.push_text_h {
+  font-weight: 800;
+}
+
+.push_avada1 {
+  width: 200rpx;
+  height: 280rpx;
+  margin-right: 2vh;
+}
+.push_delete {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 3vw;
+}
+.push_dt {
+  color: #0486f4;
+  margin-left: 23vw;
+}
+
+@media screen and (width: 375px) {
+  .push_dt {
+    color: #0486f4;
+    margin-left: 23vw;
+  }
+}
+@media screen and (width: 414px) {
+  .push_dt {
+    color: #0486f4;
+    margin-left: 22vw;
+  }
+}
+
+.jiange {
+  border-bottom: 2vw solid #f2f2f2;
+}

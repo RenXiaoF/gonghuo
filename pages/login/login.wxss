@@ -1,0 +1,183 @@
+/* pages/login/login.wxss */
+/* 0. 最大的容器 */
+.content {
+  width: 100%;
+}
+/* 手机登陆 账号登陆 */
+.type-navbar {
+  display: flex;
+  justify-content: center;
+  width: 97%;
+  background-color: #fff;
+  margin-top: 35%;
+  margin-left: 1%;
+}
+.type-box {
+  width: 39%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 76rpx;
+  padding: 0 20rpx;
+  display: inline-block;
+  border-radius: 2px;
+}
+.type-navbar-item {
+  border-top: 1rpx solid #fff;
+  border-left: 1rpx solid #fff;
+  border-right: 1rpx solid #fff;
+}
+
+.type-item-on {
+  font-size: 21 !important;
+  font-weight: 700;
+  color: #0486f4;
+  position: relative;
+}
+.type-item-on::after {
+  content: "";
+  width: 130px;
+  height: 20px;
+  color: #0486f4 !important;
+  border-top: 1rpx solid #0486f4;
+  border-left: 1rpx solid #0486f4;
+  border-right: 1rpx solid #0486f4;
+  padding-top: 2px;
+  text-align: start;
+  position: absolute;
+  bottom: 3px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* bar 切换后显示的内容 */
+.bg_content {
+  /* background: #eef1f8;
+    padding: 20rpx 20rpx 0 20rpx;
+    font-size: 30rpx; */
+}
+.mater_content {
+  background-color: white;
+  position: relative;
+  width: 100%;
+}
+.mater_text {
+  width: 100%;
+}
+/* bar 1 */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+
+
+.label {
+  box-sizing: border-box;
+  float: left;
+  padding: 0 25rpx;
+}
+.input {
+  box-sizing: border-box;
+  float: left;
+  height: 90rpx;
+  width: 500rpx;
+  padding-right: 5rpx;
+}
+/* 验证码 */
+.verify-box {
+  font-size: 28rpx;
+  width: 680rpx;
+  line-height: 90rpx;
+  margin-bottom: 7vh;
+  position: relative;
+  top: 2vh;
+}
+.verify-input {
+  box-sizing: border-box;
+  float: left;
+  height: 90rpx;
+  width: 400rpx;
+  padding-left: 20rpx;
+  border-bottom: 1rpx #d7d7d7 solid;
+}
+.verify-btn {
+  box-sizing: border-box;
+  float: right;
+  line-height: 90rpx;
+  padding: 0 70rpx;
+  background-color: #3880ff;
+  color: white;
+  border-radius: 10rpx;
+  position: absolute;
+  right: 2vw;
+  width: 42%;
+}
+
+.verify-btn1 {
+  box-sizing: border-box;
+  float: right;
+  line-height: 90rpx;
+  padding: 0 70rpx;
+  background-color: rgb(86, 87, 88);
+  color: white;
+  border-radius: 0.5em;
+  position: absolute;
+  right: 2vw;
+  width: 42%;
+}
+
+/* 注册并登陆 */
+.login-btn {
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 35rpx;
+  color: #fff;
+  background-color: #3880ff;
+  border-radius: 0.5rem;
+  margin-top: 3vh;
+}
+
+/* bar 2 */
+.login-wrap {
+  padding: 30rpx;
+  background-color: #fff;
+}
+
+/* 手机号 */
+.label-input {
+  font-size: 28rpx;
+  width: 680rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx #d7d7d7 solid;
+  margin-bottom: 2vh;
+}
+.simple {
+  font-size: 28rpx;
+  width: 680rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx #d7d7d7 solid;
+
+}
+
+/* 协议 */
+.hetong {
+  font-size: 25rpx;
+  margin-top: 2vh;
+  margin-left: 81vw;
+}
+
+/* Switch and radio */
+.sware {
+  display: flex;
+  font-size: 30rpx;
+  margin-left: 4vw;
+}
+.weui_cell {
+  zoom: 0.6;
+  margin-left: 14vw;
+}

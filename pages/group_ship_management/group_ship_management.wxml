@@ -1,0 +1,263 @@
+<!-- pages/group_ship_management/group_ship_management.wxml -->
+<!-- <text>pages/group_ship_management/group_ship_management.wxml</text> -->
+<view class="content">
+    <!-- 搜索框 -->
+    <view class="search-box">
+        <view>
+            <image bindtap="scanCode" class="srarch_img" src="../../images/QR_code.png" />
+        </view>
+        <view class="search-inner">
+            <SearchBar class="search-cont" id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear"></SearchBar>
+            <image bindtap="chooseImage" class="srarch_img1" src="../../images/camera.png" />
+        </view>
+        <!-- <view>
+        </view> -->
+    </view>
+    <!-- switch bar  待发货 待收货  已发货  全部 -->
+    <view>
+        <view class="type-navbar">
+            <view class="type-box" wx:for="{{categories}}" wx:key="index">
+                <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+                    {{item.name}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 切换按钮后显示的 内容 -->
+    <view class="bg_content">
+        <view class="mater_content">
+            <!-- bar  0 待发货 -->
+            <view class="mater_text" hidden="{{activeCategoryId==0?false:true}}">
+                <view class="jiange">
+                    <navigator url="/pages/group_shipman_detail/group_shipman_detail?types=0" open-type="navigate">
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <view>
+                                    <text class="push_text_00">已超期：1天</text>
+                                    <text class="push_text_01">返单</text>
+                                    <text class="push_text_02">紧急</text>
+                                    <text class="push_text_03">CTM</text>
+                                </view>
+                                <view>
+                                    <text class="push_text_06">要求货期：</text>
+                                    <text class="push_text_05">2020-04-30</text>
+                                </view>
+                                <view>
+                                    <text class="push_text_06">工厂复期</text>
+                                    <text class="push_text_05">2020-04-28</text>
+                                    <text class="">(歌莉娅)</text>
+                                </view>
+                                <view class="push_text_2">
+                                    <text class="wenzi">生产通知单:</text>
+                                    <text class="push_text_h">WW2020-0019</text>
+                                </view>
+                                <view class="push_text_2">
+                                    <text class="wenzi">生产制单：</text>
+                                    <text class="push_text_h">MPS2020-0012</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">款号：</text>
+                                    <text>203503220B</text>
+                                    <text class="">(歌莉娅)</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">款名：</text>
+                                    <text class="">黑底花白点休闲女衬衫</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text class="">黑底白点</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单数/实裁数：</text>
+                                    <text class="">100</text>
+                                    <text class="">/</text>
+                                    <text class="" style="color:red;">120</text>
+                                    <text class="push_dt">查看详情></text>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+            <!-- bar  1 待收货 -->
+            <view class="mater_text" hidden="{{activeCategoryId==1?false:true}}">
+                <view class="jiange">
+                    <navigator url="/pages/group_shipman_detail/group_shipman_detail?types=1" open-type="navigate">
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <view>
+                                    <text class="push_text_00">已超期：1天</text>
+                                    <text class="push_text_01">返单</text>
+                                    <text class="push_text_02">紧急</text>
+                                    <text class="push_text_03">CTM</text>
+                                </view>
+                                <view>
+                                    <text class="push_text_06">要求货期：</text>
+                                    <text class="push_text_05">2020-04-30</text>
+                                </view>
+                                <view>
+                                    <text class="push_text_06">工厂复期</text>
+                                    <text class="push_text_05">2020-04-28</text>
+                                    <text class="">(歌莉娅)</text>
+                                </view>
+                                <view class="push_text_2">
+                                    <text class="wenzi">生产通知单:</text>
+                                    <text class="push_text_h">WW2020-0019</text>
+                                </view>
+                                <view class="push_text_2">
+                                    <text class="wenzi">生产制单：</text>
+                                    <text class="push_text_h">MPS2020-0012</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">款号：</text>
+                                    <text>203503220B</text>
+                                    <text class="">(歌莉娅)</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">款名：</text>
+                                    <text class="">黑底花白点休闲女衬衫</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text class="">黑底白点</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单数/实裁数：</text>
+                                    <text class="">100</text>
+                                    <text class="">/</text>
+                                    <text class="" style="color:red;">120</text>
+                                    <text class="push_dt">查看详情></text>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+            <!-- bar  2 已发货 -->
+            <view class="mater_text" hidden="{{activeCategoryId==2?false:true}}">
+                <view class="jiange">
+                    <navigator url="/pages/group_shipman_detail/group_shipman_detail?types=2" open-type="navigate">
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <view>
+                                    <text class="push_text_00">已超期：1天</text>
+                                    <text class="push_text_01">返单</text>
+                                    <text class="push_text_02">紧急</text>
+                                    <text class="push_text_03">CTM</text>
+                                </view>
+                                <view>
+                                    <text class="push_text_06">要求货期：</text>
+                                    <text class="push_text_05">2020-04-30</text>
+                                </view>
+                                <view>
+                                    <text class="push_text_06">工厂复期</text>
+                                    <text class="push_text_05">2020-04-28</text>
+                                    <text class="">(歌莉娅)</text>
+                                </view>
+                                <view class="push_text_2">
+                                    <text class="wenzi">生产通知单:</text>
+                                    <text class="push_text_h">WW2020-0019</text>
+                                </view>
+                                <view class="push_text_2">
+                                    <text class="wenzi">生产制单：</text>
+                                    <text class="push_text_h">MPS2020-0012</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">款号：</text>
+                                    <text>203503220B</text>
+                                    <text class="">(歌莉娅)</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">款名：</text>
+                                    <text class="">黑底花白点休闲女衬衫</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text class="">黑底白点</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单数/实裁数：</text>
+                                    <text class="">100</text>
+                                    <text class="">/</text>
+                                    <text class="" style="color:red;">120</text>
+                                    <text class="push_dt">查看详情></text>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+            <!-- bar  3 全部 -->
+            <view class="mater_text" hidden="{{activeCategoryId==3?false:true}}">
+                <view class="jiange">
+                    <navigator url="/pages/group_shipman_detail/group_shipman_detail?types=3" open-type="navigate">
+                        <view class="push_con">
+                            <!-- 默认图片 -->
+                            <view>
+                                <image class="push_avada1" src="../../images/img1.png" />
+                            </view>
+                            <view class="push_text">
+                                <view>
+                                    <text class="push_text_00">已超期：1天</text>
+                                    <text class="push_text_01">返单</text>
+                                    <text class="push_text_02">紧急</text>
+                                    <text class="push_text_03">CTM</text>
+                                </view>
+                                <view>
+                                    <text class="push_text_06">要求货期：</text>
+                                    <text class="push_text_05">2020-04-30</text>
+                                </view>
+                                <view>
+                                    <text class="push_text_06">工厂复期</text>
+                                    <text class="push_text_05">2020-04-28</text>
+                                    <text class="">(歌莉娅)</text>
+                                </view>
+                                <view class="push_text_2">
+                                    <text class="wenzi">生产通知单:</text>
+                                    <text class="push_text_h">WW2020-0019</text>
+                                </view>
+                                <view class="push_text_2">
+                                    <text class="wenzi">生产制单：</text>
+                                    <text class="push_text_h">MPS2020-0012</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">款号：</text>
+                                    <text>203503220B</text>
+                                    <text class="">(歌莉娅)</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">款名：</text>
+                                    <text class="">黑底花白点休闲女衬衫</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">颜色：</text>
+                                    <text class="">黑底白点</text>
+                                </view>
+                                <view>
+                                    <text class="wenzi">下单数/实裁数：</text>
+                                    <text class="">100</text>
+                                    <text class="">/</text>
+                                    <text class="" style="color:red;">120</text>
+                                    <text class="push_dt">查看详情></text>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

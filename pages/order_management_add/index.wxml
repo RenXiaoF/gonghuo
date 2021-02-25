@@ -1,0 +1,167 @@
+<!-- pages/order_management_add/index.wxml -->
+<!-- <text>pages/order_management_add/index.wxml</text> -->
+<view class="content">
+    <view class="content_save">保存</view>
+    <!-- 生产制单基本信息 -->
+    <view class="content_1">
+        <view class="content_1_title">生产制单基本信息</view>
+        <!-- 1. 基本信息 -->
+        <view class="content_base">
+            <view class="content_base_1">
+                <!-- 1.1 -->
+                <view style="width:45vw;">
+                    <view class="text">
+                        <text class="label">生产制单:</text>
+                        <input class="input4" type="text" />
+                    </view>
+                    <view class="text">
+                        <text class="label">款号:</text>
+                        <input class="input4" type="text" />
+                        <image class="push_avada" src="../../images/tbadd.png" />
+                    </view>
+                    <view class="text">
+                        <text class="label">客户:</text>
+                        <input class="input4" type="text" />
+                        <image class="push_avada" src="../../images/tbadd.png" />
+                    </view>
+                </view>
+                <!-- 1.2 默认图片 -->
+                <view>
+                    <image class="push_avada1" src="../../images/tpadd.png" />
+                </view>
+            </view>
+            <!-- 默认时间 -->
+            <view class="default_time">
+                <view>日期:</view>
+                <view class="time_start">
+                    <picker mode="date" value="{{date}}" bindchange="changeDate">
+                        <view class="tui-picker-detail">{{date}}</view>
+                    </picker>
+                </view>
+                <view>货期:</view>
+                <view class="time_end">
+                    <picker mode="date" value="{{date1}}" bindchange="changeDate1">
+                        <view class="tui-picker-detail">{{date1}}</view>
+                    </picker>
+                </view>
+            </view>
+            <!-- switch  and  redio -->
+            <view class="sware">
+                <view>是否紧急:</view>
+                <view class="body_view">
+                    <switch checked="{{switch1Checked}}" bindchange="switch1Change" />
+                </view>
+                <view>生产方式:</view>
+                <view class="weui_cell">
+                    <radio-group class="" bindchange="radioChange">
+                        <radio checked="true" />
+                        CMT
+                        <radio checked="" />
+                        FOB
+                    </radio-group>
+                </view>
+            </view>
+            <!-- 二次工艺  加工厂 -->
+            <view class="chouese0">
+                <view class="text0">
+                    <text class="label">二次工艺:</text>
+                    <text class="input1" bindtap='empty_group_modalinput'>请选择 ></text>
+                    <!-- <image class="push_avada2" bindtap='empty_group_modalinput' src="../../images/jtx.png" /> -->
+                </view>
+                <view class="">
+                    <text class="label">加工厂:</text>
+                    <text class="input2" bindtap='empty_group_modalinput'>请选择 ></text>
+                    <!-- <image class="push_avada3" bindtap='empty_group_modalinput' src="../../images/jtx.png" /> -->
+                </view>
+            </view>
+            <!-- 选择 颜色   尺码组 -->
+            <view class="chouese">
+                <view class="text1">
+                    <text class="label">颜色:</text>
+                    <text class="input1">请选择</text>
+                    <image class="push_avada2" bindtap='empty_group_modalinput' src="../../images/jtx.png" />
+                </view>
+                <view class="">
+                    <text class="label">尺码组:</text>
+                    <text class="input2">请选择</text>
+                    <image class="push_avada3" bindtap='empty_group_modalinput' src="../../images/jtx.png" />
+                </view>
+            </view>
+            <!-- 备注 -->
+            <view class="textb">
+                <text class="labelb">备注:</text>
+                <input placeholder="请输入..." class="inputb" type="text" name="store_name" bindinput="onInputDes" value="{{inputDes}}" />
+            </view>
+        </view>
+        <!-- 2. table 表格 -->
+        <view class='table'>
+            <view class='table_header'>
+                <view class="th" style='width:200rpx;'>
+                    <view class='cell_label'>颜色</view>
+                </view>
+                <block>
+                    <view class='th1'>
+                        <view class="cell_label ">尺码</view>
+                    </view>
+                    <view class='th'>
+                        <view class="cell_label ">数量</view>
+                    </view>
+                </block>
+            </view>
+            <block>
+                <view class='table_main'>
+                    <!-- 颜色 -->
+                    <view class='td' style='width:200rpx;background-color:white;'>
+                        <view class=" ">黑色</view>
+                    </view>
+                    <!-- 尺码 -->
+                    <view class='td1'>
+                        <block>
+                            <view class="td_view">XS</view>
+                            <view class="td_view">S</view>
+                            <view class="td_view">M</view>
+                            <view class="td_view">L</view>
+                            <view class="td_view">XL</view>
+                            <view class="td_view">XXL</view>
+                        </block>
+                    </view>
+                    <!-- 数量 -->
+                    <view class='td'>
+                        <block>
+                            <!-- <input placeholder="请输入..." class="td_view" type="text" name="store_name" bindinput="onInputNumber" value="{{inputNumber}}" /> -->
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                            <input placeholder="请输入..." class="td_view1" type="number" name="store_name" bindinput="onInputNumber" value="100" />
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <!-- 按钮  提交 -->
+        <view class="content_button" bindtap="">提交</view>
+    </view>
+</view>
+<!-- 选择颜色 -->
+<modal hidden="{{empty_group_hiddenmodalput}}" title="选择颜色" confirm-text="确定" cancel-text="取消" bindcancel="empty_group_cancel" bindconfirm="empty_group_cancel">
+    <view class="page__bd">
+        <view class="section section_gap">
+            <radio-group class="radio-group" bindchange="setGroup">
+                <radio class="radio">
+                    <text>黑色</text>
+                </radio>
+                <radio class="radio">
+                    <text>白色</text>
+                </radio>
+                <radio class="radio">
+                    <text>灰色</text>
+                </radio>
+                <!-- <radio class="radio" wx:for-items="{{groupradio}}" wx:key="group_id" value="{{item.group_id}}" checked="{{item.checked}}">
+                    <text>{{item.group_name}}</text>
+                </radio> -->
+            </radio-group>
+        </view>
+    </view>
+</modal>

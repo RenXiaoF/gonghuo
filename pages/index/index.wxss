@@ -1,0 +1,343 @@
+/**index.wxss**/
+/* 0. 最大的容器 */
+.content {
+  width: 100%;
+  background-color: #ebebeb;
+}
+/* 1. swiper 轮播图 */
+.swiper_box {
+  position: relative;
+}
+swiper {
+  width: 100%;
+  height: 30vh;
+}
+.slide-image {
+  width: 100%;
+  /* height: calc(100vw * 240 / 214); */
+  height: 30vh;
+}
+image {
+ 
+}
+
+/* 2. 图标  下单管理  生产跟进  发货管理 */
+.fenlei {
+  display: flex;
+  justify-content: space-evenly;
+}
+.fenlei_image {
+  width: 18vw;
+  height: 12vh;
+}
+.fenlei_wenzi {
+  font-size: 30rpx;
+  text-align: center;
+}
+/* 订单排行  生产监控 */
+.type-navbar {
+  display: flex;
+  width: 97%;
+  background-color: #fff;
+  margin-top: 2vh;
+  margin-left: 1%;
+  border-radius: 0.5em;
+}
+.type-box {
+  width: 25%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 76rpx;
+  padding: 0 20rpx;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+}
+.type-navbar-item {
+  border-bottom: 4rpx solid #fff;
+}
+
+.type-item-on {
+  font-size: 21 !important;
+  font-weight: 700;
+  color: #0486f4;
+  position: relative;
+}
+.type-item-on::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  color: #0486f4 !important;
+  background: #f59a23;
+  border-radius: 2px;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.bg_content {
+}
+.mater_content {
+  background-color: white;
+  position: relative;
+  width: 100%;
+}
+.mater_text {
+  width: 100%;
+}
+.mater_text1 {
+  width: 100%;
+  margin-top: 3vh;
+}
+.mater_text_content {
+  width: 95%;
+  margin-left: 1%;
+  border-radius: 0.5em;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  padding-left: 2vw;
+  background-color: white;
+}
+.mater_per {
+  margin-top: 4vh;
+  border: 0.5px solid #ccc;
+  width: 95%;
+  margin-left: 2.5%;
+  border-radius: 0.5em;
+}
+ec-canvas {
+  width: 95%;
+  height: 140%;
+}
+/*  pie 饼状图 */
+.pie_con {
+  display: flex;
+  justify-content: space-around;
+}
+/* @media screen and (width: 320px) { */
+.pieCanvas {
+  width: 340px;
+  height: 300px;
+  margin-top: -2vh;
+  margin-left: 3vw;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+}
+.mater_tishi {
+  position: relative;
+  top: 3.5vh;
+}
+.mater_tishi2 {
+  position: relative;
+  top: 5vh;
+  left: -8vw;
+  font-size: 20rpx;
+  color: #ccc;
+}
+.mater_tishi3 {
+  position: relative;
+  top: 5vh;
+  left: -2vw;
+  font-size: 20rpx;
+  color: #ccc;
+}
+/* } */
+@media screen and (width: 375px) {
+  .pieCanvas {
+    width: 350px !important;
+    height: 300px !important;
+    margin-top: -2vh !important;
+    margin-left: 3vw !important;
+    border: 1px solid #ccc !important;
+    border-radius: 0.5em !important;
+  }
+  .mater_tishi {
+    position: relative !important;
+    top: 3.5vh !important;
+    left: -2vw !important;
+  }
+  .mater_tishi2 {
+    position: relative !important;
+    top: 4vh !important;
+    left: -2vw !important;
+    font-size: 20rpx !important;
+    color: #ccc !important;
+  }
+  .mater_tishi3 {
+    position: relative !important;
+    top: 4vh !important;
+    left: -2vw !important;
+    font-size: 20rpx !important;
+    color: #ccc !important;
+  }
+}
+@media screen and (width: 414px) {
+  .pieCanvas {
+    width: 387px;
+    height: 300px;
+    margin-top: -2vh;
+    margin-left: 3vw;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+  }
+  .mater_tishi {
+    position: relative;
+    top: 3.5vh;
+    left: -2vw;
+  }
+  .mater_tishi2 {
+    position: relative;
+    top: 4vh;
+    left: -5vw;
+    font-size: 20rpx;
+    color: #ccc;
+  }
+  .mater_tishi3 {
+    position: relative;
+    top: 4vh;
+    left: -4vw;
+    font-size: 20rpx;
+    color: #ccc;
+  }
+}
+/* column  柱状图 */
+/* @media screen and (width: 320px) { */
+.clumn_con {
+  border: 1rpx solid #ccc;
+  border-radius: 1em;
+  margin-top: 2vh;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-bottom: 2vh;
+}
+.mater_tishi1 {
+  position: relative;
+  top: 2vh;
+  left: 4vw;
+}
+.pieCanvas1 {
+  width: 232px;
+  height: 160px;
+  margin-top: 2vh;
+  margin-left: 3vw;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  margin-bottom: 2vh;
+  padding-left: 11vh;
+  padding-bottom: 7vh;
+}
+/* } */
+@media screen and (width: 375px) {
+  .clumn_con {
+    border: 1rpx solid #ccc;
+    border-radius: 1em;
+    margin-top: 2vh;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-bottom: 2vh;
+  }
+  .mater_tishi1 {
+    position: relative;
+    top: 2vh;
+    left: 4vw;
+  }
+  .pieCanvas1 {
+    width: 265px;
+    height: 160px;
+    margin-top: 2vh;
+    margin-left: 3vw;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    margin-bottom: 2vh;
+    padding-left: 11vh;
+    padding-bottom: 6vh;
+  }
+}
+@media screen and (width: 414px) {
+  .clumn_con {
+    border: 1rpx solid #ccc;
+    border-radius: 1em;
+    margin-top: 2vh;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-bottom: 2vh;
+  }
+  .mater_tishi1 {
+    position: relative;
+    top: 2vh;
+    left: 4vw;
+  }
+  .pieCanvas1 {
+    width: 300px;
+    height: 160px;
+    margin-top: 2vh;
+    margin-left: 3vw;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    margin-bottom: 2vh;
+    padding-left: 11vh;
+    padding-bottom: 6vh;
+  }
+}
+
+/* 效能分析 */
+.mater_xnfx {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 1vh;
+}
+.mater_xnfx_content {
+  width: 47%;
+  display: flex;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.mater_xnfx_wenzi {
+  margin-top: 2vh;
+  font-size: 22rpx;
+}
+.fenlei_image1 {
+  width: 18vw;
+  height: 9vh;
+}
+/* 超期预警 */
+.chqyj {
+  width: 97%;
+  margin-left: 1%;
+  margin-top: 2vh;
+  border-radius: 0.5em;
+  margin-bottom: 2vh;
+  background-color: white;
+}
+.chqyj_title {
+  margin-left: 3vw;
+  margin-top: 3vh;
+}
+.chqyj_content {
+  display: flex;
+  padding: 2vh 2px;
+}
+.yuanquantu {
+  width: 33%;
+  display: flex;
+}
+.yqt_title {
+  font-size: 30rpx;
+  margin-left: 16vw;
+  color: #333333;
+}
+.yqt_num {
+  font-size: 30rpx;
+  color: red;
+}
+.yqt_num1 {
+  font-size: 30rpx;
+}
+.pieCanvas2 {
+  width: 100px;
+  height: 82px;
+  margin-top: -3vh;
+}

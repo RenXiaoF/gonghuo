@@ -1,0 +1,245 @@
+/* pages/shipping_management/shipping_management.wxss */
+.content {
+  width: 100%;
+}
+/* 默认时间 */
+.default_time {
+  width: 100%;
+  margin-top: 1vh;
+  background-color: white;
+  font-size: 27rpx;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  color: #b0c4de;
+  border-bottom: 1vw solid #f2f2f2;
+}
+/* 搜索框 */
+.search-box {
+  display: flex;
+  justify-content: space-around;
+}
+.srarch_img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 2.5vh;
+}
+.srarch_img1 {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 8.5vh;
+  left: 60vw;
+}
+.search-inner {
+  /* 圆角 */
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+.search-cont {
+  width: 95%;
+  font-size: 24rpx;
+}
+
+/* 切换 公司名称 */
+.content_top {
+  font-size: 30rpx;
+  justify-content: space-between;
+  display: flex;
+  border-bottom: 1rpx solid #e7e7e7;
+}
+.company_t {
+  color: #0486f4;
+  font-weight: bold;
+  font-size: 34rpx;
+  padding-top: 2vh;
+  padding-left: 2vw;
+
+  width: 40vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.company_t_long {
+  color: #0486f4;
+  font-weight: bold;
+  font-size: 32rpx;
+  padding-top: 2vh;
+  padding-left: 2vw;
+  /* 限制宽度  超出省略  隐藏  不换行 */
+  width: 65vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.push_de {
+  width: 40rpx;
+  height: 30rpx;
+  margin-top: 0.8vh;
+}
+.push_de1 {
+  color: #aaaaaa;
+}
+.company_name {
+  background-color: white;
+  padding: 2vh 4vw;
+}
+.company_h {
+  color: #666;
+  font-weight: 700;
+}
+
+/* switch bar  待发货  已发货  全部 */
+.type-navbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* margin-top: 2vh; */
+  border-top: 1vw solid #f2f2f2;
+}
+.type-box {
+  width: 33%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 76rpx;
+  padding: 0 20rpx;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+}
+.type-navbar-item {
+  border-bottom: 4rpx solid #fff;
+}
+
+.type-item-on {
+  font-size: 21 !important;
+  font-weight: 700;
+  color: #0486f4;
+  position: relative;
+}
+.type-item-on::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  color: #0486f4 !important;
+  background: #f59a23;
+  border-radius: 2px;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* 切换按钮后显示的 内容 */
+.bg_content {
+  border-top: 2vw solid #f2f2f2;
+}
+.mater_content {
+  background-color: white;
+  position: relative;
+  width: 100%;
+}
+.mater_text {
+  width: 100%;
+  font-size: 30rpx;
+}
+/* list */
+.wenzi {
+  color: #666666;
+}
+.mater_text .navigator {
+  display: flex;
+  /* 调整 内容 空间  使内容成为一行 */
+  justify-content: space-between;
+  padding: 2vh;
+}
+.mater_text navigator {
+  display: flex;
+  /* 调整 内容 空间  使内容成为一行 */
+  justify-content: space-between;
+  padding: 2vh;
+}
+
+.push_con {
+  justify-content: space-around;
+  display: flex;
+}
+.push_text {
+  color: black;
+  flex-direction: column;
+  display: inline-flex;
+}
+@media screen and (width: 375px) {
+  .push_text {
+    color: black;
+    flex-direction: column;
+    display: inline-flex;
+    font-size: 28rpx;
+  }
+}
+@media screen and (width: 414px) {
+  .push_text {
+    color: black;
+    flex-direction: column;
+    display: inline-flex;
+    font-size: 28rpx;
+  }
+}
+.push_text_00 {
+  color: red;
+}
+.push_text_01 {
+  color: white;
+  background-color: #f59a23;
+  padding: 2rpx 9rpx;
+  margin-left: 9vw;
+}
+.push_text_02 {
+  color: white;
+  background-color: red;
+  padding: 2rpx 9rpx;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.push_text_03 {
+  color: white;
+  background-color: #c280ff;
+  padding: 2rpx 9rpx;
+}
+
+.push_text_06 {
+  color: red;
+}
+.push_text_05 {
+  color: red;
+  font-weight: 800;
+}
+.totle_time {
+  justify-self: center;
+  flex-direction: column;
+  display: inline-flex;
+}
+.push_text_2 {
+  flex-direction: column;
+}
+.push_text_h {
+  font-weight: 800;
+}
+
+.push_avada1 {
+  width: 200rpx;
+  height: 265rpx;
+  margin-top: 0.5vh;
+  margin-right: 2vh;
+}
+.push_dt {
+  color: #0486f4;
+  margin-left: 1vw;
+}
+
+.jiange {
+  border-bottom: 2vw solid #f2f2f2;
+}
